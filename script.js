@@ -559,14 +559,47 @@ function updatePageContent(lang) {
     updateElementText('#news .section-title', t['news-title']);
     updateElementText('#news .section-subtitle', t['news-subtitle']);
     
-    // Update footer
-    updateElementText('.footer-section h3:contains("O nás"), .footer-section h3:contains("About Us")', t['footer-about']);
-    updateElementText('.footer-section h4:contains("Projektový tým"), .footer-section h4:contains("Project Team")', t['footer-team']);
-    updateElementText('.footer-section h3:contains("Kontaktní informace"), .footer-section h3:contains("Contact Information")', t['footer-contact']);
-    updateElementText('.footer-section h3:contains("Zdroje"), .footer-section h3:contains("Resources")', t['footer-resources']);
-    updateElementText('.footer-section h3:contains("Zdroje a partneři"), .footer-section h3:contains("Sources & Partners")', t['footer-partners']);
-    updateElementText('.footer-copyright', t['footer-copyright']);
-    updateElementText('.footer-acknowledgment p', t['footer-acknowledgment']);
+    // Update footer - using proper selectors instead of :contains()
+    updateFooterContent(t);
+}
+
+// Helper function to update footer content with proper selectors
+function updateFooterContent(t) {
+    // Update footer sections by finding them through their structure
+    const footerSections = document.querySelectorAll('.footer-section');
+    
+    footerSections.forEach((section, index) => {
+        const h3 = section.querySelector('h3');
+        const h4 = section.querySelector('h4');
+        const p = section.querySelector('p');
+        
+        if (h3) {
+            // Update based on section position or content
+            if (index === 0 || (p && p.textContent.includes('historiků') || p.textContent.includes('historians'))) {
+                h3.textContent = t['footer-about'];
+                if (p) p.textContent = t['footer-about-text'];
+            } else if (h3.textContent.includes('Kontakt') || h3.textContent.includes('Contact')) {
+                h3.textContent = t['footer-contact'];
+            } else if (h3.textContent.includes('Zdroje') || h3.textContent.includes('Resources') || h3.textContent.includes('Sources')) {
+                h3.textContent = t['footer-resources'];
+            }
+        }
+        
+        if (h4 && (h4.textContent.includes('tým') || h4.textContent.includes('Team'))) {
+            h4.textContent = t['footer-team'];
+        }
+    });
+    
+    // Update copyright and acknowledgment
+    const copyright = document.querySelector('.footer-copyright');
+    if (copyright) {
+        copyright.textContent = t['footer-copyright'];
+    }
+    
+    const acknowledgment = document.querySelector('.footer-acknowledgment p');
+    if (acknowledgment) {
+        acknowledgment.textContent = t['footer-acknowledgment'];
+    }
 }
 
 // Helper function to update element text
