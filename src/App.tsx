@@ -223,6 +223,19 @@ const translations: Translations = {
   }
 };
 
+// Logo component using the crucifix symbol
+const LogoIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
+  <div className={`${className} flex items-center justify-center`}>
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+      <path d="M12 2C12.5523 2 13 2.44772 13 3V10H16C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12H13V21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21V12H8C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10H11V3C11 2.44772 11.4477 2 12 2Z"/>
+      <circle cx="12" cy="6" r="1.5" fill="currentColor"/>
+      <circle cx="12" cy="18" r="1.5" fill="currentColor"/>
+      <circle cx="8.5" cy="11" r="1" fill="currentColor"/>
+      <circle cx="15.5" cy="11" r="1" fill="currentColor"/>
+    </svg>
+  </div>
+);
+
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState<'cs' | 'en'>('cs');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -394,11 +407,7 @@ function App() {
             {/* Logo */}
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <img 
-                  src="/jezis.kristus.podbijak-1.png" 
-                  alt="Museum Logo" 
-                  className="w-10 h-10 object-contain filter grayscale"
-                />
+                <LogoIcon className="w-8 h-8 text-black" />
               </div>
               <span className="text-2xl font-bold text-white tracking-wide">{t('nav-title')}</span>
             </div>
@@ -502,11 +511,7 @@ function App() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <div className="flex items-center space-x-4 mb-8">
-                  <img 
-                    src="/jezis.kristus.podbijak-1.png" 
-                    alt="Museum Logo" 
-                    className="w-16 h-16 object-contain filter brightness-0 invert"
-                  />
+                  <LogoIcon className="w-16 h-16 text-white" />
                   <div className="w-px h-16 bg-gray-600"></div>
                   <div className="text-sm text-gray-400 uppercase tracking-widest">
                     {currentLanguage === 'cs' ? 'Historická paměť' : 'Historical Memory'}
@@ -820,7 +825,76 @@ function App() {
                 </div>
               </div>
               
-              {/* Add more document cards as needed */}
+              {/* Additional document cards */}
+              <div className="bg-white border border-gray-300 overflow-hidden">
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=300"
+                    alt="Personal diary"
+                    className="w-full h-full object-cover filter grayscale"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    {currentLanguage === 'cs' ? 'Osobní deník Marie K.' : 'Personal Diary of Maria K.'}
+                  </h3>
+                  <p className="text-gray-700 text-sm mb-6 leading-relaxed">
+                    {currentLanguage === 'cs' 
+                      ? 'Soukromé deníkové záznamy dokumentující každodenní život během období politické nejistoty.'
+                      : 'Private diary entries documenting daily life during periods of political uncertainty.'
+                    }
+                  </p>
+                  <div className="flex justify-between items-center text-xs text-gray-600 mb-6">
+                    <span>1938-1942</span>
+                    <span className="bg-gray-200 text-black px-3 py-1 text-xs font-medium uppercase tracking-wide">
+                      {currentLanguage === 'cs' ? 'Osobní spisy' : 'Personal Papers'}
+                    </span>
+                  </div>
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-black text-white py-3 px-4 text-sm hover:bg-gray-800 transition-colors duration-300 font-medium">
+                      {t('btn-view')}
+                    </button>
+                    <button className="flex-1 border-2 border-black text-black py-3 px-4 text-sm hover:bg-black hover:text-white transition-colors duration-300 font-medium">
+                      {t('btn-download')}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-300 overflow-hidden">
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=300"
+                    alt="Historical photographs"
+                    className="w-full h-full object-cover filter grayscale"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    {currentLanguage === 'cs' ? 'Dokumentace protestů' : 'Protest Documentation'}
+                  </h3>
+                  <p className="text-gray-700 text-sm mb-6 leading-relaxed">
+                    {currentLanguage === 'cs' 
+                      ? 'Sbírka fotografií dokumentujících veřejné demonstrace a občanskoprávní hnutí.'
+                      : 'Collection of photographs documenting public demonstrations and civil rights movements.'
+                    }
+                  </p>
+                  <div className="flex justify-between items-center text-xs text-gray-600 mb-6">
+                    <span>1968-1975</span>
+                    <span className="bg-gray-200 text-black px-3 py-1 text-xs font-medium uppercase tracking-wide">
+                      {currentLanguage === 'cs' ? 'Fotografie' : 'Photographs'}
+                    </span>
+                  </div>
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-black text-white py-3 px-4 text-sm hover:bg-gray-800 transition-colors duration-300 font-medium">
+                      {currentLanguage === 'cs' ? 'Zobrazit galerii' : 'View Gallery'}
+                    </button>
+                    <button className="flex-1 border-2 border-black text-black py-3 px-4 text-sm hover:bg-black hover:text-white transition-colors duration-300 font-medium">
+                      {currentLanguage === 'cs' ? 'Stáhnout archiv' : 'Download Archive'}
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -870,7 +944,60 @@ function App() {
                 </div>
               </article>
               
-              {/* Add more news articles as needed */}
+              <article className="bg-white border border-gray-300 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="p-8">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <span>{currentLanguage === 'cs' ? '10. prosince 2024' : 'December 10, 2024'}</span>
+                    <span className="bg-black text-white px-3 py-1 text-xs font-medium uppercase tracking-wide">
+                      {currentLanguage === 'cs' ? 'Výstava' : 'Exhibition'}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-black mb-4">
+                    {currentLanguage === 'cs' 
+                      ? 'Nová virtuální výstava: "Hlasy odporu"'
+                      : 'New Virtual Exhibition: "Voices of Resistance"'
+                    }
+                  </h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    {currentLanguage === 'cs'
+                      ? 'Naše nejnovější výstava se zaměřuje na činy odvahy a solidarity během období intenzivních politických represí.'
+                      : 'Our latest exhibition focuses on acts of courage and solidarity during periods of intense political repression.'
+                    }
+                  </p>
+                  <button 
+                    onClick={() => scrollToSection('exhibitions')}
+                    className="text-black font-medium hover:underline border-b border-black"
+                  >
+                    {currentLanguage === 'cs' ? 'Zobrazit výstavu' : 'View Exhibition'}
+                  </button>
+                </div>
+              </article>
+
+              <article className="bg-white border border-gray-300 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="p-8">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <span>{currentLanguage === 'cs' ? '5. prosince 2024' : 'December 5, 2024'}</span>
+                    <span className="bg-black text-white px-3 py-1 text-xs font-medium uppercase tracking-wide">
+                      {currentLanguage === 'cs' ? 'Výzkum' : 'Research'}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-black mb-4">
+                    {currentLanguage === 'cs' 
+                      ? 'Spuštěn kolaborativní výzkumný projekt'
+                      : 'Collaborative Research Project Launched'
+                    }
+                  </h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    {currentLanguage === 'cs'
+                      ? 'Partnerství s mezinárodními institucemi pro digitalizaci a analýzu přeshraničních vzorců politického pronásledování.'
+                      : 'Partnership with international institutions to digitize and analyze cross-border patterns of political persecution.'
+                    }
+                  </p>
+                  <button className="text-black font-medium hover:underline border-b border-black">
+                    {currentLanguage === 'cs' ? 'Dozvědět se více' : 'Learn More'}
+                  </button>
+                </div>
+              </article>
             </div>
           </div>
         </section>
