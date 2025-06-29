@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Museum of Historical Repressions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2'/><path d='M9 9h6v6H9z'/></svg>">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                    </svg>
+                    <span class="nav-title">Virtual Museum</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#timeline" class="nav-link">Timeline</a>
+                    <a href="#exhibitions" class="nav-link">Exhibitions</a>
+                    <a href="#documents" class="nav-link">Documents</a>
+                    <a href="#news" class="nav-link">News</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Preserving History, Honoring Memory</h1>
+                <p class="hero-subtitle">Exploring the multifaceted history of repressions through accessible digital exhibitions, interactive timelines, and comprehensive archives.</p>
+                <div class="hero-actions">
+                    <a href="#timeline" class="btn btn-primary">Explore Timeline</a>
+                    <a href="#exhibitions" class="btn btn-secondary">View Exhibitions</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Historical archives and documents" loading="lazy">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About the Project</h2>
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h3>Mission & Vision</h3>
+                        <p>Our virtual museum aims to create an engaging online platform showcasing historical repressions, providing accessible digital exhibitions and educational resources. We strive to preserve historical memory and promote understanding through comprehensive research and interactive presentations.</p>
+                        
+                        <h3>Project Significance</h3>
+                        <p>This digital archive serves as a vital resource for researchers, educators, and the general public interested in understanding the complex history of political and social repressions. Our platform offers unprecedented access to documents, testimonies, and scholarly analysis.</p>
+                        
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Historical Documents</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">Personal Stories</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Interactive Exhibits</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Historical research and documentation" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="section timeline-section">
+            <div class="container">
+                <h2 class="section-title">Interactive Timeline</h2>
+                <p class="section-subtitle">Navigate through key historical events and personalities</p>
+                
+                <div class="timeline-controls">
+                    <button class="timeline-filter active" data-period="all">All Periods</button>
+                    <button class="timeline-filter" data-period="early">1900-1930</button>
+                    <button class="timeline-filter" data-period="mid">1930-1960</button>
+                    <button class="timeline-filter" data-period="late">1960-1990</button>
+                </div>
+                
+                <div class="timeline" id="timeline">
+                    <div class="timeline-item" data-period="early" data-year="1917">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1917</div>
+                            <h3>Revolutionary Changes</h3>
+                            <p>Major political upheavals leading to significant social and institutional transformations.</p>
+                            <div class="timeline-image">
+                                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Historical documentation from 1917" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="early" data-year="1925">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1925</div>
+                            <h3>Institutional Reforms</h3>
+                            <p>Establishment of new administrative structures and legal frameworks affecting civil liberties.</p>
+                            <div class="timeline-personalities">
+                                <div class="personality">
+                                    <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Historical figure" loading="lazy">
+                                    <span>Notable Figure A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="mid" data-year="1937">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1937</div>
+                            <h3>Period of Intensification</h3>
+                            <p>Significant escalation in political repressions affecting various social groups and institutions.</p>
+                            <div class="timeline-documents">
+                                <a href="#documents" class="timeline-doc">View Related Documents</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="mid" data-year="1953">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1953</div>
+                            <h3>Transitional Period</h3>
+                            <p>Changes in leadership and policy direction leading to gradual shifts in repressive practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="late" data-year="1968">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1968</div>
+                            <h3>Social Movements</h3>
+                            <p>Emergence of civil rights movements and increased resistance to authoritarian practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="late" data-year="1989">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1989</div>
+                            <h3>Democratic Transitions</h3>
+                            <p>Fall of authoritarian regimes and beginning of democratic reforms and truth commissions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exhibitions Section -->
+        <section id="exhibitions" class="section">
+            <div class="container">
+                <h2 class="section-title">Virtual Exhibitions</h2>
+                <p class="section-subtitle">Curated collections showcasing various aspects of historical repressions</p>
+                
+                <div class="exhibition-filters">
+                    <button class="filter-btn active" data-filter="all">All Exhibitions</button>
+                    <button class="filter-btn" data-filter="personal">Personal Stories</button>
+                    <button class="filter-btn" data-filter="institutional">Institutional</button>
+                    <button class="filter-btn" data-filter="resistance">Resistance</button>
+                </div>
+                
+                <div class="exhibitions-grid" id="exhibitionsGrid">
+                    <div class="exhibition-card" data-category="personal">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8386399/pexels-photo-8386399.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Voices of the Silenced exhibition" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Voices of the Silenced</h3>
+                            <p>Personal testimonies and stories from individuals who experienced political repressions firsthand.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">45 Items</span>
+                                <span class="exhibition-date">Updated Dec 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Explore Exhibition</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="institutional">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Apparatus of Control exhibition" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Apparatus of Control</h3>
+                            <p>Examining the institutional mechanisms and bureaucratic structures that enabled systematic repressions.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">32 Items</span>
+                                <span class="exhibition-date">Updated Nov 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Explore Exhibition</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="resistance">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Acts of Courage exhibition" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Acts of Courage</h3>
+                            <p>Stories of resistance, solidarity, and human dignity in the face of oppression and persecution.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">28 Items</span>
+                                <span class="exhibition-date">Updated Oct 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Explore Exhibition</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="institutional">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Legal Frameworks exhibition" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Legal Frameworks</h3>
+                            <p>Analysis of laws, regulations, and judicial processes that legitimized repressive measures.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">38 Items</span>
+                                <span class="exhibition-date">Updated Sep 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Explore Exhibition</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="personal">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Letters from Prison exhibition" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Letters from Prison</h3>
+                            <p>Correspondence and personal writings that provide intimate glimpses into the human cost of repression.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">52 Items</span>
+                                <span class="exhibition-date">Updated Aug 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Explore Exhibition</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="resistance">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8386427/pexels-photo-8386427.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Underground Networks exhibition" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Underground Networks</h3>
+                            <p>The hidden networks of support, communication, and resistance that sustained hope during dark times.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">41 Items</span>
+                                <span class="exhibition-date">Updated Jul 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Explore Exhibition</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documents Section -->
+        <section id="documents" class="section">
+            <div class="container">
+                <h2 class="section-title">Document Archive</h2>
+                <p class="section-subtitle">Access to historical documents, archives, and publications</p>
+                
+                <div class="documents-search">
+                    <div class="search-bar">
+                        <input type="text" id="documentSearch" placeholder="Search documents..." class="search-input">
+                        <button class="search-btn" aria-label="Search documents">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="document-filters">
+                        <select id="documentType" class="filter-select">
+                            <option value="all">All Types</option>
+                            <option value="official">Official Documents</option>
+                            <option value="personal">Personal Papers</option>
+                            <option value="photographs">Photographs</option>
+                            <option value="recordings">Audio/Video</option>
+                        </select>
+                        <select id="documentPeriod" class="filter-select">
+                            <option value="all">All Periods</option>
+                            <option value="1900-1930">1900-1930</option>
+                            <option value="1930-1960">1930-1960</option>
+                            <option value="1960-1990">1960-1990</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="documents-grid" id="documentsGrid">
+                    <div class="document-card" data-type="official" data-period="1930-1960">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Official decree document" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Administrative Decree No. 247</h3>
+                            <p class="document-description">Official government decree outlining new administrative procedures and restrictions.</p>
+                            <div class="document-meta">
+                                <span class="document-date">March 15, 1937</span>
+                                <span class="document-type">Official Document</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">View Document</button>
+                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="personal" data-period="1930-1960">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Personal diary pages" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Personal Diary of Maria K.</h3>
+                            <p class="document-description">Private diary entries documenting daily life during periods of political uncertainty.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1938-1942</span>
+                                <span class="document-type">Personal Papers</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">View Document</button>
+                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="photographs" data-period="1960-1990">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Historical photograph collection" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Protest Documentation</h3>
+                            <p class="document-description">Collection of photographs documenting public demonstrations and civil rights movements.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1968-1975</span>
+                                <span class="document-type">Photographs</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">View Gallery</button>
+                                <button class="btn btn-sm btn-outline">Download Archive</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="official" data-period="1900-1930">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Legal document archive" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Legal Code Amendments</h3>
+                            <p class="document-description">Series of legal amendments that expanded state powers and restricted individual rights.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1923-1925</span>
+                                <span class="document-type">Official Document</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">View Document</button>
+                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="recordings" data-period="1960-1990">
+                        <div class="document-thumbnail">
+                            <div class="audio-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5,6 9,2 9,2 15,6 15,11 19,11 5"></polygon>
+                                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="document-info">
+                            <h3>Oral History Interview: Viktor S.</h3>
+                            <p class="document-description">Audio interview with survivor discussing experiences and impact of political repressions.</p>
+                            <div class="document-meta">
+                                <span class="document-date">Recorded 1987</span>
+                                <span class="document-type">Audio Recording</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">Play Audio</button>
+                                <button class="btn btn-sm btn-outline">Transcript</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="personal" data-period="1960-1990">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Personal correspondence" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Correspondence Collection</h3>
+                            <p class="document-description">Letters between family members separated by political circumstances and imprisonment.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1970-1985</span>
+                                <span class="document-type">Personal Papers</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">View Letters</button>
+                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section">
+            <div class="container">
+                <h2 class="section-title">Latest Updates</h2>
+                <p class="section-subtitle">Recent additions, research findings, and project announcements</p>
+                
+                <div class="news-grid">
+                    <article class="news-card featured">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=600" alt="New archive discovery" loading="lazy">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">December 15, 2024</span>
+                                <span class="news-category">Discovery</span>
+                            </div>
+                            <h3>Major Archive Discovery Expands Collection</h3>
+                            <p>Recently uncovered documents from state archives provide new insights into administrative processes during the 1930s period of repressions.</p>
+                            <a href="#" class="news-link">Read Full Article</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">December 10, 2024</span>
+                                <span class="news-category">Exhibition</span>
+                            </div>
+                            <h3>New Virtual Exhibition: "Voices of Resistance"</h3>
+                            <p>Our latest exhibition focuses on acts of courage and solidarity during periods of intense political repression.</p>
+                            <a href="#exhibitions" class="news-link">View Exhibition</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">December 5, 2024</span>
+                                <span class="news-category">Research</span>
+                            </div>
+                            <h3>Collaborative Research Project Launched</h3>
+                            <p>Partnership with international institutions to digitize and analyze cross-border patterns of political persecution.</p>
+                            <a href="#" class="news-link">Learn More</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">November 28, 2024</span>
+                                <span class="news-category">Technology</span>
+                            </div>
+                            <h3>Enhanced Search Capabilities</h3>
+                            <p>New advanced search features allow for more precise exploration of our document archives and exhibitions.</p>
+                            <a href="#documents" class="news-link">Try Search</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">November 20, 2024</span>
+                                <span class="news-category">Education</span>
+                            </div>
+                            <h3>Educational Resource Package</h3>
+                            <p>Comprehensive teaching materials and curriculum guides now available for educators and researchers.</p>
+                            <a href="#" class="news-link">Download Resources</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">November 15, 2024</span>
+                                <span class="news-category">Conference</span>
+                            </div>
+                            <h3>International Symposium Proceedings</h3>
+                            <p>Full proceedings from our recent symposium on "Memory, Justice, and Historical Truth" are now available.</p>
+                            <a href="#" class="news-link">Access Proceedings</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>A dedicated team of historians, researchers, and digital archivists committed to preserving historical memory and promoting understanding of past repressions.</p>
+                    <div class="team-info">
+                        <h4>Project Team</h4>
+                        <ul>
+                            <li>Dr. Sarah Chen - Project Director</li>
+                            <li>Prof. Michael Rodriguez - Lead Historian</li>
+                            <li>Elena Volkov - Digital Archivist</li>
+                            <li>James Thompson - Technical Lead</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> info@virtualmuseum.org</p>
+                        <p><strong>Research Inquiries:</strong> research@virtualmuseum.org</p>
+                        <p><strong>Technical Support:</strong> support@virtualmuseum.org</p>
+                        <p><strong>Address:</strong> Digital Humanities Institute, University Plaza, Academic City</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#timeline">Interactive Timeline</a></li>
+                        <li><a href="#exhibitions">Virtual Exhibitions</a></li>
+                        <li><a href="#documents">Document Archive</a></li>
+                        <li><a href="#">Research Guidelines</a></li>
+                        <li><a href="#">Educational Materials</a></li>
+                        <li><a href="#">Citation Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Sources & Partners</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">National Archives</a></li>
+                        <li><a href="#">State Historical Society</a></li>
+                        <li><a href="#">International Research Network</a></li>
+                        <li><a href="#">Memorial Organizations</a></li>
+                        <li><a href="#">Academic Partners</a></li>
+                        <li><a href="#">Bibliography</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Virtual Museum of Historical Repressions. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Copyright Notice</a>
+                    </div>
+                </div>
+                <div class="footer-acknowledgment">
+                    <p>This project is supported by grants from the National Endowment for the Humanities and the Digital History Foundation.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
