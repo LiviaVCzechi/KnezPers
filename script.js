@@ -575,7 +575,7 @@ function updateFooterContent(t) {
         
         if (h3) {
             // Update based on section position or content
-            if (index === 0 || (p && p.textContent.includes('historiků') || p.textContent.includes('historians'))) {
+            if (index === 0 || (p && (p.textContent.includes('historiků') || p.textContent.includes('historians')))) {
                 h3.textContent = t['footer-about'];
                 if (p) p.textContent = t['footer-about-text'];
             } else if (h3.textContent.includes('Kontakt') || h3.textContent.includes('Contact')) {
