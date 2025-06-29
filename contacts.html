@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakty - Virtuální muzeum historických represí</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2'/><path d='M9 9h6v6H9z'/></svg>">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                    </svg>
+                    <span class="nav-title">Virtuální muzeum</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Domů</a>
+                    <a href="timeline.html" class="nav-link">Časová osa</a>
+                    <a href="exhibitions.html" class="nav-link">Výstavy</a>
+                    <a href="documents.html" class="nav-link">Dokumenty</a>
+                    <a href="contacts.html" class="nav-link active">Kontakty</a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="cs">CS</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Přepnout navigaci">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- About Us Section -->
+        <section id="about-us" class="section">
+            <div class="container">
+                <h1 class="section-title">O nás</h1>
+                <p class="section-subtitle">Specializovaný tým historiků, výzkumníků a digitálních archivářů věnující se zachování historické paměti a podpoře porozumění minulým represím.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dr. Sarah Chen" loading="lazy">
+                        </div>
+                        <div class="member-info">
+                            <h3>Dr. Sarah Chen</h3>
+                            <h4>Ředitelka projektu</h4>
+                            
+                            <div class="member-details">
+                                <div class="detail-section">
+                                    <h5>Vzdělání</h5>
+                                    <p>Ph.D. v moderních dějinách, Harvard University (2008)<br>
+                                    M.A. v digitálních humanitních vědách, Stanford University (2004)</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Specializace</h5>
+                                    <p>Politické represe 20. století, digitální archivace, komparativní studia autoritářských režimů</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Zkušenosti</h5>
+                                    <p>15 let výzkumu v oblasti historických represí, vedoucí pozice v několika mezinárodních archivních projektech. Autorka tří monografií o politických represích ve střední Evropě.</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Publikace</h5>
+                                    <p>Více než 40 recenzovaných článků, editor speciálního čísla Journal of Contemporary History věnovaného digitálním metodám v historickém výzkumu.</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Kontakt</h5>
+                                    <p><strong>Email:</strong> s.chen@virtualmuseum.org<br>
+                                    <strong>Telefon:</strong> +420 234 567 893</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Prof. Michael Rodriguez" loading="lazy">
+                        </div>
+                        <div class="member-info">
+                            <h3>Prof. Michael Rodriguez</h3>
+                            <h4>Vedoucí historik</h4>
+                            
+                            <div class="member-details">
+                                <div class="detail-section">
+                                    <h5>Vzdělání</h5>
+                                    <p>Ph.D. v evropských dějinách, Oxford University (1995)<br>
+                                    M.A. v politických vědách, Columbia University (1991)</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Specializace</h5>
+                                    <p>Totalitární režimy, orální historie, sociální paměť a trauma, metodologie historického výzkumu</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Zkušenosti</h5>
+                                    <p>25 let akademické praxe, profesor na University of California Berkeley. Konzultant pro Truth and Reconciliation Commission v několika zemích.</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Publikace a ocenění</h5>
+                                    <p>Autor 6 knih včetně oceněné monografie "Voices from the Shadows: Oral History and Political Repression" (2018). Více než 80 vědeckých článků. Guggenheim Fellowship (2015), American Historical Association Award for Excellence in Teaching (2020).</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Kontakt</h5>
+                                    <p><strong>Email:</strong> m.rodriguez@virtualmuseum.org<br>
+                                    <strong>Telefon:</strong> +420 234 567 894</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Elena Volkov" loading="lazy">
+                        </div>
+                        <div class="member-info">
+                            <h3>Elena Volkov</h3>
+                            <h4>Digitální archivářka</h4>
+                            
+                            <div class="member-details">
+                                <div class="detail-section">
+                                    <h5>Vzdělání</h5>
+                                    <p>M.S. v informačních vědách, University of Washington (2012)<br>
+                                    B.A. v historii a informatice, Charles University Prague (2009)</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Specializace</h5>
+                                    <p>Digitální archivace, metadata standardy, databázové systémy, digitální preservation, uživatelské rozhraní pro historické archivy</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Zkušenosti</h5>
+                                    <p>12 let praxe v digitálních archivech, dříve pracovala v Národním archivu České republiky a European Holocaust Research Infrastructure.</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Projekty a certifikace</h5>
+                                    <p>Vedoucí digitalizace více než 50 000 historických dokumentů, koordinátorka mezinárodního projektu "Digital Memory of Europe". Certified Archivist (Academy of Certified Archivists), Digital Preservation Specialist (Library of Congress).</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Kontakt</h5>
+                                    <p><strong>Email:</strong> e.volkov@virtualmuseum.org<br>
+                                    <strong>Telefon:</strong> +420 234 567 895</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=300" alt="James Thompson" loading="lazy">
+                        </div>
+                        <div class="member-info">
+                            <h3>James Thompson</h3>
+                            <h4>Technický vedoucí</h4>
+                            
+                            <div class="member-details">
+                                <div class="detail-section">
+                                    <h5>Vzdělání</h5>
+                                    <p>M.S. v počítačových vědách, MIT (2010)<br>
+                                    B.S. v softwarovém inženýrství, Carnegie Mellon University (2007)</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Specializace</h5>
+                                    <p>Webové technologie, databázové systémy, uživatelská zkušenost, responsivní design, accessibility standards</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Zkušenosti</h5>
+                                    <p>14 let vývoje webových aplikací, dříve senior developer v Google Cultural Institute a Mozilla Foundation. Specialista na digitální humanitní vědy.</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Technologie a certifikace</h5>
+                                    <p>Expert v React, Node.js, PostgreSQL, Elasticsearch. Přispěvatel do open-source projektů zaměřených na digitální archivaci. AWS Certified Solutions Architect, Google Cloud Professional Developer, W3C Web Accessibility Initiative certified.</p>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h5>Kontakt</h5>
+                                    <p><strong>Email:</strong> j.thompson@virtualmuseum.org<br>
+                                    <strong>Telefon:</strong> +420 234 567 896</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section id="contact-info" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Kontaktní informace</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Hlavní kontakt</h3>
+                        <div class="contact-details">
+                            <p><strong>Email:</strong> info@virtualmuseum.org</p>
+                            <p><strong>Telefon:</strong> +420 234 567 890</p>
+                            <p><strong>Fax:</strong> +420 234 567 899</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Výzkumné dotazy</h3>
+                        <div class="contact-details">
+                            <p><strong>Email:</strong> research@virtualmuseum.org</p>
+                            <p><strong>Telefon:</strong> +420 234 567 891</p>
+                            <p><strong>Koordinátor:</strong> Prof. Michael Rodriguez</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Technická podpora</h3>
+                        <div class="contact-details">
+                            <p><strong>Email:</strong> support@virtualmuseum.org</p>
+                            <p><strong>Telefon:</strong> +420 234 567 892</p>
+                            <p><strong>Koordinátor:</strong> James Thompson</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Digitální archiv</h3>
+                        <div class="contact-details">
+                            <p><strong>Email:</strong> archive@virtualmuseum.org</p>
+                            <p><strong>Telefon:</strong> +420 234 567 897</p>
+                            <p><strong>Koordinátor:</strong> Elena Volkov</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="address-section">
+                    <h3>Adresa a úřední hodiny</h3>
+                    <div class="address-grid">
+                        <div class="address-info">
+                            <h4>Sídlo organizace</h4>
+                            <p>Institut digitálních humanitních věd<br>
+                            Univerzitní náměstí 1<br>
+                            110 00 Praha 1<br>
+                            Česká republika</p>
+                        </div>
+                        
+                        <div class="office-hours">
+                            <h4>Úřední hodiny</h4>
+                            <p><strong>Pondělí - Pátek:</strong> 9:00 - 17:00<br>
+                            <strong>Sobota:</strong> 10:00 - 14:00 (pouze na objednání)<br>
+                            <strong>Neděle:</strong> Zavřeno</p>
+                            
+                            <p class="note"><strong>Poznámka:</strong> Pro osobní návštěvy doporučujeme předchozí objednání.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rychlé odkazy</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="timeline.html">Časová osa</a></li>
+                        <li><a href="exhibitions.html">Výstavy</a></li>
+                        <li><a href="documents.html">Dokumenty</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Zdroje a partneři</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Národní archiv ČR</a></li>
+                        <li><a href="#">Státní historická společnost</a></li>
+                        <li><a href="#">Mezinárodní výzkumná síť</a></li>
+                        <li><a href="#">Pamětní organizace</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> info@virtualmuseum.org</p>
+                        <p><strong>Telefon:</strong> +420 234 567 890</p>
+                        <p><strong>Adresa:</strong> Univerzitní náměstí 1, Praha 1</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Virtuální muzeum historických represí. Všechna práva vyhrazena.</p>
+                    <div class="legal-links">
+                        <a href="#">Zásady ochrany osobních údajů</a>
+                        <a href="#">Podmínky použití</a>
+                        <a href="#">Autorská práva</a>
+                    </div>
+                </div>
+                <div class="footer-acknowledgment">
+                    <p>Tento projekt je podporován granty od Národního fondu pro humanitní vědy a Nadace digitální historie.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

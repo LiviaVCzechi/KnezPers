@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Časová osa - Virtuální muzeum historických represí</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2'/><path d='M9 9h6v6H9z'/></svg>">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                    </svg>
+                    <span class="nav-title">Virtuální muzeum</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Domů</a>
+                    <a href="timeline.html" class="nav-link active">Časová osa</a>
+                    <a href="exhibitions.html" class="nav-link">Výstavy</a>
+                    <a href="documents.html" class="nav-link">Dokumenty</a>
+                    <a href="contacts.html" class="nav-link">Kontakty</a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="cs">CS</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Přepnout navigaci">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Timeline Section -->
+        <section id="timeline" class="section timeline-section">
+            <div class="container">
+                <h1 class="section-title">Interaktivní časová osa</h1>
+                <p class="section-subtitle">Procházejte klíčovými historickými událostmi a osobnostmi</p>
+                
+                <div class="timeline-controls">
+                    <button class="timeline-filter active" data-period="all">Všechna období</button>
+                    <button class="timeline-filter" data-period="early">1900-1930</button>
+                    <button class="timeline-filter" data-period="mid">1930-1960</button>
+                    <button class="timeline-filter" data-period="late">1960-1990</button>
+                </div>
+                
+                <div class="timeline" id="timeline">
+                    <div class="timeline-item" data-period="early" data-year="1917">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1917</div>
+                            <h3>Revoluční změny</h3>
+                            <p>Významné politické otřesy vedoucí k zásadním společenským a institucionálním transformacím.</p>
+                            <div class="timeline-image">
+                                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Historická dokumentace z roku 1917" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="early" data-year="1925">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1925</div>
+                            <h3>Institucionální reformy</h3>
+                            <p>Ustanovení nových administrativních struktur a právních rámců ovlivňujících občanské svobody.</p>
+                            <div class="timeline-personalities">
+                                <div class="personality">
+                                    <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Historická osobnost" loading="lazy">
+                                    <span>Významná osobnost A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="mid" data-year="1937">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1937</div>
+                            <h3>Období zostření</h3>
+                            <p>Významná eskalace politických represí postihující různé společenské skupiny a instituce.</p>
+                            <div class="timeline-documents">
+                                <a href="documents.html" class="timeline-doc">Zobrazit související dokumenty</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="mid" data-year="1953">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1953</div>
+                            <h3>Přechodné období</h3>
+                            <p>Změny ve vedení a směřování politiky vedoucí k postupným posunům v represivních praktikách.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="late" data-year="1968">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1968</div>
+                            <h3>Společenská hnutí</h3>
+                            <p>Vznik občanskoprávních hnutí a zvýšený odpor vůči autoritářským praktikám.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-period="late" data-year="1989">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1989</div>
+                            <h3>Demokratické přechody</h3>
+                            <p>Pád autoritářských režimů a začátek demokratických reforem a komisí pravdy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rychlé odkazy</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="exhibitions.html">Virtuální výstavy</a></li>
+                        <li><a href="documents.html">Archiv dokumentů</a></li>
+                        <li><a href="contacts.html">Kontakty</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontaktní informace</h3>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> info@virtualmuseum.org</p>
+                        <p><strong>Telefon:</strong> +420 234 567 890</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Virtuální muzeum historických represí. Všechna práva vyhrazena.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

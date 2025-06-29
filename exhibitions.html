@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výstavy - Virtuální muzeum historických represí</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2'/><path d='M9 9h6v6H9z'/></svg>">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                    </svg>
+                    <span class="nav-title">Virtuální muzeum</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Domů</a>
+                    <a href="timeline.html" class="nav-link">Časová osa</a>
+                    <a href="exhibitions.html" class="nav-link active">Výstavy</a>
+                    <a href="documents.html" class="nav-link">Dokumenty</a>
+                    <a href="contacts.html" class="nav-link">Kontakty</a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="cs">CS</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Přepnout navigaci">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Exhibitions Section -->
+        <section id="exhibitions" class="section">
+            <div class="container">
+                <h1 class="section-title">Virtuální výstavy</h1>
+                <p class="section-subtitle">Kurátorské sbírky prezentující různé aspekty historických represí</p>
+                
+                <div class="exhibition-filters">
+                    <button class="filter-btn active" data-filter="all">Všechny výstavy</button>
+                    <button class="filter-btn" data-filter="personal">Osobní příběhy</button>
+                    <button class="filter-btn" data-filter="institutional">Institucionální</button>
+                    <button class="filter-btn" data-filter="resistance">Odpor</button>
+                </div>
+                
+                <div class="exhibitions-grid" id="exhibitionsGrid">
+                    <div class="exhibition-card" data-category="personal">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8386399/pexels-photo-8386399.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Hlasy umlčených" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Hlasy umlčených</h3>
+                            <p>Osobní svědectví a příběhy jednotlivců, kteří zažili politické represe na vlastní kůži.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">45 položek</span>
+                                <span class="exhibition-date">Aktualizováno prosinec 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="institutional">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Aparát kontroly" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Aparát kontroly</h3>
+                            <p>Zkoumání institucionálních mechanismů a byrokratických struktur, které umožnily systematické represe.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">32 položek</span>
+                                <span class="exhibition-date">Aktualizováno listopad 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="resistance">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Činy odvahy" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Činy odvahy</h3>
+                            <p>Příběhy odporu, solidarity a lidské důstojnosti tváří v tvář útlaku a pronásledování.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">28 položek</span>
+                                <span class="exhibition-date">Aktualizováno říjen 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="institutional">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Právní rámce" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Právní rámce</h3>
+                            <p>Analýza zákonů, nařízení a soudních procesů, které legitimizovaly represivní opatření.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">38 položek</span>
+                                <span class="exhibition-date">Aktualizováno září 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="personal">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Dopisy z vězení" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Dopisy z vězení</h3>
+                            <p>Korespondence a osobní spisy poskytující intimní pohledy na lidské náklady represí.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">52 položek</span>
+                                <span class="exhibition-date">Aktualizováno srpen 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card" data-category="resistance">
+                        <div class="exhibition-image">
+                            <img src="https://images.pexels.com/photos/8386427/pexels-photo-8386427.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Podzemní sítě" loading="lazy">
+                        </div>
+                        <div class="exhibition-content">
+                            <h3>Podzemní sítě</h3>
+                            <p>Skryté sítě podpory, komunikace a odporu, které udržovaly naději v temných časech.</p>
+                            <div class="exhibition-meta">
+                                <span class="exhibition-items">41 položek</span>
+                                <span class="exhibition-date">Aktualizováno červenec 2024</span>
+                            </div>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rychlé odkazy</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="timeline.html">Časová osa</a></li>
+                        <li><a href="documents.html">Archiv dokumentů</a></li>
+                        <li><a href="contacts.html">Kontakty</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontaktní informace</h3>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> info@virtualmuseum.org</p>
+                        <p><strong>Telefon:</strong> +420 234 567 890</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Virtuální muzeum historických represí. Všechna práva vyhrazena.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

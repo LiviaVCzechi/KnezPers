@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumenty - Virtuální muzeum historických represí</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2'/><path d='M9 9h6v6H9z'/></svg>">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                    </svg>
+                    <span class="nav-title">Virtuální muzeum</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Domů</a>
+                    <a href="timeline.html" class="nav-link">Časová osa</a>
+                    <a href="exhibitions.html" class="nav-link">Výstavy</a>
+                    <a href="documents.html" class="nav-link active">Dokumenty</a>
+                    <a href="contacts.html" class="nav-link">Kontakty</a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="cs">CS</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Přepnout navigaci">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Documents Section -->
+        <section id="documents" class="section">
+            <div class="container">
+                <h1 class="section-title">Archiv dokumentů</h1>
+                <p class="section-subtitle">Přístup k historickým dokumentům, archivům a publikacím</p>
+                
+                <div class="documents-search">
+                    <div class="search-bar">
+                        <input type="text" id="documentSearch" placeholder="Hledat dokumenty..." class="search-input">
+                        <button class="search-btn" aria-label="Hledat dokumenty">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="document-filters">
+                        <select id="documentType" class="filter-select">
+                            <option value="all">Všechny typy</option>
+                            <option value="official">Úředné dokumenty</option>
+                            <option value="personal">Osobní spisy</option>
+                            <option value="photographs">Fotografie</option>
+                            <option value="recordings">Audio/Video</option>
+                        </select>
+                        <select id="documentPeriod" class="filter-select">
+                            <option value="all">Všechna období</option>
+                            <option value="1900-1930">1900-1930</option>
+                            <option value="1930-1960">1930-1960</option>
+                            <option value="1960-1990">1960-1990</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="documents-grid" id="documentsGrid">
+                    <div class="document-card" data-type="official" data-period="1930-1960">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Úřední dekret" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Administrativní dekret č. 247</h3>
+                            <p class="document-description">Úřední vládní dekret popisující nové administrativní postupy a omezení.</p>
+                            <div class="document-meta">
+                                <span class="document-date">15. března 1937</span>
+                                <span class="document-type">Úřední dokument</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">Zobrazit dokument</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="personal" data-period="1930-1960">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Osobní deník" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Osobní deník Marie K.</h3>
+                            <p class="document-description">Soukromé deníkové záznamy dokumentující každodenní život během období politické nejistoty.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1938-1942</span>
+                                <span class="document-type">Osobní spisy</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">Zobrazit dokument</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="photographs" data-period="1960-1990">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Historická fotografická sbírka" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Dokumentace protestů</h3>
+                            <p class="document-description">Sbírka fotografií dokumentujících veřejné demonstrace a občanskoprávní hnutí.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1968-1975</span>
+                                <span class="document-type">Fotografie</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">Zobrazit galerii</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout archiv</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="official" data-period="1900-1930">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Právní dokumentový archiv" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Novely právního kodexu</h3>
+                            <p class="document-description">Série právních novel, které rozšířily státní pravomoci a omezily individuální práva.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1923-1925</span>
+                                <span class="document-type">Úřední dokument</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">Zobrazit dokument</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="recordings" data-period="1960-1990">
+                        <div class="document-thumbnail">
+                            <div class="audio-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5,6 9,2 9,2 15,6 15,11 19,11 5"></polygon>
+                                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="document-info">
+                            <h3>Rozhovor orální historie: Viktor S.</h3>
+                            <p class="document-description">Zvukový rozhovor s přeživším diskutující zkušenosti a dopad politických represí.</p>
+                            <div class="document-meta">
+                                <span class="document-date">Nahráno 1987</span>
+                                <span class="document-type">Zvukový záznam</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">Přehrát audio</button>
+                                <button class="btn btn-sm btn-outline">Přepis</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card" data-type="personal" data-period="1960-1990">
+                        <div class="document-thumbnail">
+                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Osobní korespondence" loading="lazy">
+                        </div>
+                        <div class="document-info">
+                            <h3>Sbírka korespondence</h3>
+                            <p class="document-description">Dopisy mezi členy rodiny oddělenými politickými okolnostmi a uvězněním.</p>
+                            <div class="document-meta">
+                                <span class="document-date">1970-1985</span>
+                                <span class="document-type">Osobní spisy</span>
+                            </div>
+                            <div class="document-actions">
+                                <button class="btn btn-sm btn-primary">Zobrazit dopisy</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rychlé odkazy</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="timeline.html">Časová osa</a></li>
+                        <li><a href="exhibitions.html">Výstavy</a></li>
+                        <li><a href="contacts.html">Kontakty</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontaktní informace</h3>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> info@virtualmuseum.org</p>
+                        <p><strong>Telefon:</strong> +420 234 567 890</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Virtuální muzeum historických represí. Všechna práva vyhrazena.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
