@@ -533,9 +533,9 @@ function updatePageContent(lang) {
     updateElementText('.about-content h3:nth-of-type(2)', t['about-significance']);
     updateElementText('.about-content p:first-of-type', t['about-mission-text']);
     updateElementText('.about-content p:nth-of-type(2)', t['about-significance-text']);
-    updateElementText('.stat-label:contains("Historických dokumentů"), .stat-label:contains("Historical Documents")', t['stat-documents']);
-    updateElementText('.stat-label:contains("Osobních příběhů"), .stat-label:contains("Personal Stories")', t['stat-stories']);
-    updateElementText('.stat-label:contains("Interaktivních exponátů"), .stat-label:contains("Interactive Exhibits")', t['stat-exhibits']);
+    updateElementText('.stat-label[data-translation-key="stat-documents"]', t['stat-documents']);
+    updateElementText('.stat-label[data-translation-key="stat-stories"]', t['stat-stories']);
+    updateElementText('.stat-label[data-translation-key="stat-exhibits"]', t['stat-exhibits']);
     
     // Update timeline section
     updateElementText('#timeline .section-title', t['timeline-title']);
