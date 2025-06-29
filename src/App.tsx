@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, Menu, X, Search, Calendar, BookOpen, FileText, Users, Award, ChevronRight } from 'lucide-react';
+import { Menu, X, Search, Calendar, BookOpen, FileText, Users, Award, ChevronRight } from 'lucide-react';
 
 interface Translation {
   [key: string]: string;
@@ -372,10 +372,10 @@ function App() {
       const header = document.querySelector('header');
       if (header) {
         if (window.scrollY > 100) {
-          header.style.background = 'rgba(255, 255, 255, 0.98)';
-          header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+          header.style.background = 'rgba(0, 0, 0, 0.95)';
+          header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
         } else {
-          header.style.background = 'rgba(255, 255, 255, 0.95)';
+          header.style.background = 'rgba(0, 0, 0, 0.8)';
           header.style.boxShadow = 'none';
         }
       }
@@ -388,36 +388,42 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800 transition-all duration-300">
         <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <Globe className="h-8 w-8 text-blue-800" />
-              <span className="text-xl font-bold text-blue-800">{t('nav-title')}</span>
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                <img 
+                  src="/jezis.kristus.podbijak-1.png" 
+                  alt="Museum Logo" 
+                  className="w-10 h-10 object-contain filter grayscale"
+                />
+              </div>
+              <span className="text-2xl font-bold text-white tracking-wide">{t('nav-title')}</span>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-blue-800 font-medium transition-colors">
+              <button onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-white font-medium transition-colors duration-300 tracking-wide">
                 {t('nav-home')}
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-blue-800 font-medium transition-colors">
+              <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white font-medium transition-colors duration-300 tracking-wide">
                 {t('nav-about')}
               </button>
-              <button onClick={() => scrollToSection('timeline')} className="text-gray-600 hover:text-blue-800 font-medium transition-colors">
+              <button onClick={() => scrollToSection('timeline')} className="text-gray-300 hover:text-white font-medium transition-colors duration-300 tracking-wide">
                 {t('nav-timeline')}
               </button>
-              <button onClick={() => scrollToSection('exhibitions')} className="text-gray-600 hover:text-blue-800 font-medium transition-colors">
+              <button onClick={() => scrollToSection('exhibitions')} className="text-gray-300 hover:text-white font-medium transition-colors duration-300 tracking-wide">
                 {t('nav-exhibitions')}
               </button>
-              <button onClick={() => scrollToSection('documents')} className="text-gray-600 hover:text-blue-800 font-medium transition-colors">
+              <button onClick={() => scrollToSection('documents')} className="text-gray-300 hover:text-white font-medium transition-colors duration-300 tracking-wide">
                 {t('nav-documents')}
               </button>
-              <button onClick={() => scrollToSection('news')} className="text-gray-600 hover:text-blue-800 font-medium transition-colors">
+              <button onClick={() => scrollToSection('news')} className="text-gray-300 hover:text-white font-medium transition-colors duration-300 tracking-wide">
                 {t('nav-news')}
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-800 font-medium transition-colors">
+              <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white font-medium transition-colors duration-300 tracking-wide">
                 {t('nav-contact')}
               </button>
             </div>
@@ -427,20 +433,20 @@ function App() {
               <div className="flex space-x-1">
                 <button
                   onClick={() => switchLanguage('cs')}
-                  className={`px-3 py-1 text-sm font-semibold rounded transition-colors ${
+                  className={`px-4 py-2 text-sm font-semibold rounded transition-colors duration-300 ${
                     currentLanguage === 'cs'
-                      ? 'bg-blue-800 text-white'
-                      : 'text-gray-600 hover:text-blue-800 border border-gray-300'
+                      ? 'bg-white text-black'
+                      : 'text-gray-300 hover:text-white border border-gray-600 hover:border-gray-400'
                   }`}
                 >
                   CS
                 </button>
                 <button
                   onClick={() => switchLanguage('en')}
-                  className={`px-3 py-1 text-sm font-semibold rounded transition-colors ${
+                  className={`px-4 py-2 text-sm font-semibold rounded transition-colors duration-300 ${
                     currentLanguage === 'en'
-                      ? 'bg-blue-800 text-white'
-                      : 'text-gray-600 hover:text-blue-800 border border-gray-300'
+                      ? 'bg-white text-black'
+                      : 'text-gray-300 hover:text-white border border-gray-600 hover:border-gray-400'
                   }`}
                 >
                   EN
@@ -450,7 +456,7 @@ function App() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 text-gray-600 hover:text-blue-800"
+                className="md:hidden p-2 text-gray-300 hover:text-white"
               >
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -459,27 +465,27 @@ function App() {
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-200">
+            <div className="md:hidden py-4 border-t border-gray-800">
               <div className="flex flex-col space-y-2">
-                <button onClick={() => scrollToSection('home')} className="text-left px-4 py-2 text-gray-600 hover:text-blue-800 font-medium">
+                <button onClick={() => scrollToSection('home')} className="text-left px-4 py-3 text-gray-300 hover:text-white font-medium">
                   {t('nav-home')}
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-left px-4 py-2 text-gray-600 hover:text-blue-800 font-medium">
+                <button onClick={() => scrollToSection('about')} className="text-left px-4 py-3 text-gray-300 hover:text-white font-medium">
                   {t('nav-about')}
                 </button>
-                <button onClick={() => scrollToSection('timeline')} className="text-left px-4 py-2 text-gray-600 hover:text-blue-800 font-medium">
+                <button onClick={() => scrollToSection('timeline')} className="text-left px-4 py-3 text-gray-300 hover:text-white font-medium">
                   {t('nav-timeline')}
                 </button>
-                <button onClick={() => scrollToSection('exhibitions')} className="text-left px-4 py-2 text-gray-600 hover:text-blue-800 font-medium">
+                <button onClick={() => scrollToSection('exhibitions')} className="text-left px-4 py-3 text-gray-300 hover:text-white font-medium">
                   {t('nav-exhibitions')}
                 </button>
-                <button onClick={() => scrollToSection('documents')} className="text-left px-4 py-2 text-gray-600 hover:text-blue-800 font-medium">
+                <button onClick={() => scrollToSection('documents')} className="text-left px-4 py-3 text-gray-300 hover:text-white font-medium">
                   {t('nav-documents')}
                 </button>
-                <button onClick={() => scrollToSection('news')} className="text-left px-4 py-2 text-gray-600 hover:text-blue-800 font-medium">
+                <button onClick={() => scrollToSection('news')} className="text-left px-4 py-3 text-gray-300 hover:text-white font-medium">
                   {t('nav-news')}
                 </button>
-                <button onClick={() => scrollToSection('contact')} className="text-left px-4 py-2 text-gray-600 hover:text-blue-800 font-medium">
+                <button onClick={() => scrollToSection('contact')} className="text-left px-4 py-3 text-gray-300 hover:text-white font-medium">
                   {t('nav-contact')}
                 </button>
               </div>
@@ -489,29 +495,40 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-16">
+      <main className="pt-20">
         {/* Hero Section */}
-        <section id="home" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
+        <section id="home" className="py-24 bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                <h1 className="text-4xl lg:text-5xl font-bold text-blue-800 leading-tight">
+                <div className="flex items-center space-x-4 mb-8">
+                  <img 
+                    src="/jezis.kristus.podbijak-1.png" 
+                    alt="Museum Logo" 
+                    className="w-16 h-16 object-contain filter brightness-0 invert"
+                  />
+                  <div className="w-px h-16 bg-gray-600"></div>
+                  <div className="text-sm text-gray-400 uppercase tracking-widest">
+                    {currentLanguage === 'cs' ? 'Historická paměť' : 'Historical Memory'}
+                  </div>
+                </div>
+                <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
                   {t('hero-title')}
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-300 leading-relaxed">
                   {t('hero-subtitle')}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 pt-8">
                   <button
                     onClick={() => scrollToSection('timeline')}
-                    className="inline-flex items-center px-6 py-3 bg-blue-800 text-white font-semibold rounded-lg hover:bg-blue-900 transition-colors"
+                    className="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors duration-300"
                   >
                     {t('hero-btn-timeline')}
                     <ChevronRight className="ml-2 h-5 w-5" />
                   </button>
                   <button
                     onClick={() => scrollToSection('exhibitions')}
-                    className="inline-flex items-center px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors"
+                    className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded hover:bg-white hover:text-black transition-colors duration-300"
                   >
                     {t('hero-btn-exhibitions')}
                     <ChevronRight className="ml-2 h-5 w-5" />
@@ -519,10 +536,11 @@ function App() {
                 </div>
               </div>
               <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10 rounded-2xl"></div>
                 <img
                   src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Historical archives and documents"
-                  className="rounded-2xl shadow-2xl w-full h-auto"
+                  className="rounded-2xl shadow-2xl w-full h-auto filter grayscale"
                 />
               </div>
             </div>
@@ -530,46 +548,47 @@ function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-white">
+        <section id="about" className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-blue-800 mb-4">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 tracking-tight">
                 {t('about-title')}
               </h2>
+              <div className="w-24 h-1 bg-black mx-auto"></div>
             </div>
             
-            <div className="grid lg:grid-cols-3 gap-12 items-start">
-              <div className="lg:col-span-2 space-y-8">
+            <div className="grid lg:grid-cols-3 gap-16 items-start">
+              <div className="lg:col-span-2 space-y-12">
                 <div>
-                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                  <h3 className="text-3xl font-semibold text-black mb-6 tracking-tight">
                     {t('about-mission')}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed text-lg">
                     {t('about-mission-text')}
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+                  <h3 className="text-3xl font-semibold text-black mb-6 tracking-tight">
                     {t('about-significance')}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed text-lg">
                     {t('about-significance-text')}
                   </p>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-6 pt-8">
-                  <div className="text-center p-6 bg-gray-50 rounded-xl">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">500+</div>
-                    <div className="text-sm font-medium text-gray-600">{t('stat-documents')}</div>
+                <div className="grid grid-cols-3 gap-8 pt-12">
+                  <div className="text-center p-8 bg-gray-100 border border-gray-300">
+                    <div className="text-4xl font-bold text-black mb-3">500+</div>
+                    <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">{t('stat-documents')}</div>
                   </div>
-                  <div className="text-center p-6 bg-gray-50 rounded-xl">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">100+</div>
-                    <div className="text-sm font-medium text-gray-600">{t('stat-stories')}</div>
+                  <div className="text-center p-8 bg-gray-100 border border-gray-300">
+                    <div className="text-4xl font-bold text-black mb-3">100+</div>
+                    <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">{t('stat-stories')}</div>
                   </div>
-                  <div className="text-center p-6 bg-gray-50 rounded-xl">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">50+</div>
-                    <div className="text-sm font-medium text-gray-600">{t('stat-exhibits')}</div>
+                  <div className="text-center p-8 bg-gray-100 border border-gray-300">
+                    <div className="text-4xl font-bold text-black mb-3">50+</div>
+                    <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">{t('stat-exhibits')}</div>
                   </div>
                 </div>
               </div>
@@ -578,7 +597,7 @@ function App() {
                 <img
                   src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Historical research and documentation"
-                  className="rounded-xl shadow-lg w-full h-auto"
+                  className="w-full h-auto border border-gray-300 filter grayscale"
                 />
               </div>
             </div>
@@ -586,27 +605,28 @@ function App() {
         </section>
 
         {/* Timeline Section */}
-        <section id="timeline" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section id="timeline" className="py-24 bg-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-blue-800 mb-4">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 tracking-tight">
                 {t('timeline-title')}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 {t('timeline-subtitle')}
               </p>
+              <div className="w-24 h-1 bg-black mx-auto mt-6"></div>
             </div>
 
             {/* Timeline Controls */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
               {['all', 'early', 'mid', 'late'].map((period) => (
                 <button
                   key={period}
                   onClick={() => setActiveTimelinePeriod(period)}
-                  className={`px-6 py-2 rounded-full font-medium transition-colors ${
+                  className={`px-8 py-3 font-medium transition-colors duration-300 border-2 ${
                     activeTimelinePeriod === period
-                      ? 'bg-blue-800 text-white'
-                      : 'bg-white text-gray-600 hover:bg-blue-100 border border-gray-300'
+                      ? 'bg-black text-white border-black'
+                      : 'bg-white text-black border-gray-400 hover:border-black'
                   }`}
                 >
                   {t(`timeline-${period}`)}
@@ -616,26 +636,26 @@ function App() {
 
             {/* Timeline */}
             <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-800 to-orange-600 h-full"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-black h-full"></div>
               
-              <div className="space-y-12">
+              <div className="space-y-16">
                 {filteredTimelineEvents.map((event, index) => (
                   <div key={event.year} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-800 border-4 border-white rounded-full shadow-lg z-10"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-black border-4 border-white shadow-lg z-10"></div>
                     
-                    <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                      <div className="bg-white p-6 rounded-xl shadow-lg">
-                        <div className="text-2xl font-bold text-orange-600 mb-2">{event.year}</div>
-                        <h3 className="text-xl font-semibold text-blue-800 mb-3">{event.title}</h3>
-                        <p className="text-gray-600 mb-4">{event.description}</p>
+                    <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
+                      <div className="bg-white p-8 border border-gray-300 shadow-lg">
+                        <div className="text-3xl font-bold text-black mb-3">{event.year}</div>
+                        <h3 className="text-2xl font-semibold text-black mb-4">{event.title}</h3>
+                        <p className="text-gray-700 mb-6 leading-relaxed">{event.description}</p>
                         
                         {event.image && (
-                          <img src={event.image} alt={event.title} className="w-full h-32 object-cover rounded-lg mb-4" />
+                          <img src={event.image} alt={event.title} className="w-full h-40 object-cover border border-gray-300 mb-6 filter grayscale" />
                         )}
                         
                         {event.personality && (
-                          <div className="flex items-center gap-3 mb-4">
-                            <img src={event.personality.image} alt={event.personality.name} className="w-12 h-12 rounded-full object-cover" />
+                          <div className="flex items-center gap-4 mb-6">
+                            <img src={event.personality.image} alt={event.personality.name} className="w-16 h-16 object-cover border border-gray-300 filter grayscale" />
                             <span className="text-sm font-medium text-gray-700">{event.personality.name}</span>
                           </div>
                         )}
@@ -643,7 +663,7 @@ function App() {
                         {event.hasDocuments && (
                           <button
                             onClick={() => scrollToSection('documents')}
-                            className="text-blue-800 font-medium hover:underline"
+                            className="text-black font-medium hover:underline border-b border-black"
                           >
                             {t('view-related-docs')}
                           </button>
@@ -658,27 +678,28 @@ function App() {
         </section>
 
         {/* Exhibitions Section */}
-        <section id="exhibitions" className="py-20 bg-white">
+        <section id="exhibitions" className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-blue-800 mb-4">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 tracking-tight">
                 {t('exhibitions-title')}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 {t('exhibitions-subtitle')}
               </p>
+              <div className="w-24 h-1 bg-black mx-auto mt-6"></div>
             </div>
 
             {/* Exhibition Filters */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
               {['all', 'personal', 'institutional', 'resistance'].map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setActiveExhibitionFilter(filter)}
-                  className={`px-6 py-2 rounded-full font-medium transition-colors ${
+                  className={`px-8 py-3 font-medium transition-colors duration-300 border-2 ${
                     activeExhibitionFilter === filter
-                      ? 'bg-orange-600 text-white'
-                      : 'bg-white text-gray-600 hover:bg-orange-100 border border-gray-300'
+                      ? 'bg-black text-white border-black'
+                      : 'bg-white text-black border-gray-400 hover:border-black'
                   }`}
                 >
                   {t(`exhibitions-${filter}`)}
@@ -689,22 +710,22 @@ function App() {
             {/* Exhibitions Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredExhibitions.map((exhibition) => (
-                <div key={exhibition.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  <div className="h-48 overflow-hidden">
+                <div key={exhibition.id} className="bg-white border border-gray-300 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div className="h-64 overflow-hidden">
                     <img
                       src={exhibition.image}
                       alt={exhibition.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 filter grayscale"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-blue-800 mb-3">{exhibition.title}</h3>
-                    <p className="text-gray-600 mb-4">{exhibition.description}</p>
-                    <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
+                  <div className="p-8">
+                    <h3 className="text-2xl font-semibold text-black mb-4">{exhibition.title}</h3>
+                    <p className="text-gray-700 mb-6 leading-relaxed">{exhibition.description}</p>
+                    <div className="flex justify-between items-center text-sm text-gray-600 mb-6">
                       <span className="font-medium">{exhibition.items} {t('items')}</span>
                       <span>{t('updated')} {exhibition.updated}</span>
                     </div>
-                    <button className="w-full bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-blue-900 transition-colors">
+                    <button className="w-full bg-black text-white py-3 px-6 hover:bg-gray-800 transition-colors duration-300 font-medium">
                       {t('btn-explore')}
                     </button>
                   </div>
@@ -715,35 +736,36 @@ function App() {
         </section>
 
         {/* Documents Section */}
-        <section id="documents" className="py-20 bg-gray-50">
+        <section id="documents" className="py-24 bg-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-blue-800 mb-4">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 tracking-tight">
                 {t('documents-title')}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 {t('documents-subtitle')}
               </p>
+              <div className="w-24 h-1 bg-black mx-auto mt-6"></div>
             </div>
 
             {/* Search and Filters */}
-            <div className="max-w-4xl mx-auto mb-12">
-              <div className="relative mb-6">
+            <div className="max-w-4xl mx-auto mb-16">
+              <div className="relative mb-8">
                 <input
                   type="text"
                   placeholder={t('search-placeholder')}
                   value={documentSearch}
                   onChange={(e) => setDocumentSearch(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-16 pr-4 py-4 border-2 border-gray-400 focus:border-black focus:outline-none text-lg"
                 />
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-500" />
               </div>
               
               <div className="flex flex-wrap gap-4 justify-center">
                 <select
                   value={documentTypeFilter}
                   onChange={(e) => setDocumentTypeFilter(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="px-6 py-3 border-2 border-gray-400 focus:border-black focus:outline-none"
                 >
                   <option value="all">{t('filter-all-types')}</option>
                   <option value="official">{t('filter-official')}</option>
@@ -755,7 +777,7 @@ function App() {
                 <select
                   value={documentPeriodFilter}
                   onChange={(e) => setDocumentPeriodFilter(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="px-6 py-3 border-2 border-gray-400 focus:border-black focus:outline-none"
                 >
                   <option value="all">{t('filter-all-periods')}</option>
                   <option value="1900-1930">1900-1930</option>
@@ -767,32 +789,31 @@ function App() {
 
             {/* Documents Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Sample documents - in a real app, these would be filtered based on search and filters */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="h-40 bg-gray-100 flex items-center justify-center">
-                  <FileText className="h-16 w-16 text-gray-400" />
+              <div className="bg-white border border-gray-300 overflow-hidden">
+                <div className="h-48 bg-gray-200 flex items-center justify-center border-b border-gray-300">
+                  <FileText className="h-20 w-20 text-gray-500" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-blue-800 mb-2">
+                <div className="p-8">
+                  <h3 className="text-xl font-semibold text-black mb-3">
                     {currentLanguage === 'cs' ? 'Administrativní dekret č. 247' : 'Administrative Decree No. 247'}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-gray-700 text-sm mb-6 leading-relaxed">
                     {currentLanguage === 'cs' 
                       ? 'Úřední vládní dekret popisující nové administrativní postupy a omezení.'
                       : 'Official government decree outlining new administrative procedures and restrictions.'
                     }
                   </p>
-                  <div className="flex justify-between items-center text-xs text-gray-500 mb-4">
+                  <div className="flex justify-between items-center text-xs text-gray-600 mb-6">
                     <span>{currentLanguage === 'cs' ? '15. března 1937' : 'March 15, 1937'}</span>
-                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                    <span className="bg-gray-200 text-black px-3 py-1 text-xs font-medium uppercase tracking-wide">
                       {currentLanguage === 'cs' ? 'Úřední dokument' : 'Official Document'}
                     </span>
                   </div>
-                  <div className="flex gap-2">
-                    <button className="flex-1 bg-blue-800 text-white py-2 px-3 rounded text-sm hover:bg-blue-900 transition-colors">
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-black text-white py-3 px-4 text-sm hover:bg-gray-800 transition-colors duration-300 font-medium">
                       {t('btn-view')}
                     </button>
-                    <button className="flex-1 border border-blue-800 text-blue-800 py-2 px-3 rounded text-sm hover:bg-blue-50 transition-colors">
+                    <button className="flex-1 border-2 border-black text-black py-3 px-4 text-sm hover:bg-black hover:text-white transition-colors duration-300 font-medium">
                       {t('btn-download')}
                     </button>
                   </div>
@@ -805,44 +826,45 @@ function App() {
         </section>
 
         {/* News Section */}
-        <section id="news" className="py-20 bg-white">
+        <section id="news" className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-blue-800 mb-4">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 tracking-tight">
                 {t('news-title')}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 {t('news-subtitle')}
               </p>
+              <div className="w-24 h-1 bg-black mx-auto mt-6"></div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <article className="bg-white border border-gray-300 overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <img
                   src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="News"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-64 object-cover filter grayscale"
                 />
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                <div className="p-8">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                     <span>{currentLanguage === 'cs' ? '15. prosince 2024' : 'December 15, 2024'}</span>
-                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs font-medium">
+                    <span className="bg-black text-white px-3 py-1 text-xs font-medium uppercase tracking-wide">
                       {currentLanguage === 'cs' ? 'Objev' : 'Discovery'}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-blue-800 mb-3">
+                  <h3 className="text-2xl font-semibold text-black mb-4">
                     {currentLanguage === 'cs' 
                       ? 'Významný archivní objev rozšiřuje sbírku'
                       : 'Major Archive Discovery Expands Collection'
                     }
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     {currentLanguage === 'cs'
                       ? 'Nedávno objevené dokumenty ze státních archivů poskytují nové poznatky o administrativních procesech během období represí ve 30. letech.'
                       : 'Recently uncovered documents from state archives provide new insights into administrative processes during the 1930s period of repressions.'
                     }
                   </p>
-                  <button className="text-blue-800 font-medium hover:underline">
+                  <button className="text-black font-medium hover:underline border-b border-black">
                     {currentLanguage === 'cs' ? 'Číst celý článek' : 'Read Full Article'}
                   </button>
                 </div>
@@ -855,15 +877,15 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-white py-16">
+      <footer id="contact" className="bg-black text-white py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div>
-              <h3 className="text-xl font-semibold text-orange-400 mb-4">{t('footer-about')}</h3>
-              <p className="text-gray-300 mb-6">{t('footer-about-text')}</p>
+              <h3 className="text-2xl font-semibold text-white mb-6">{t('footer-about')}</h3>
+              <p className="text-gray-400 mb-8 leading-relaxed">{t('footer-about-text')}</p>
               <div>
-                <h4 className="font-medium text-gray-200 mb-2">{t('footer-team')}</h4>
-                <ul className="text-sm text-gray-400 space-y-1">
+                <h4 className="font-medium text-gray-300 mb-4">{t('footer-team')}</h4>
+                <ul className="text-sm text-gray-500 space-y-2">
                   <li>Dr. Sarah Chen - Project Director</li>
                   <li>Prof. Michael Rodriguez - Lead Historian</li>
                   <li>Elena Volkov - Digital Archivist</li>
@@ -873,52 +895,52 @@ function App() {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-orange-400 mb-4">{t('footer-contact')}</h3>
-              <div className="text-gray-300 space-y-2">
-                <p><strong>Email:</strong> info@virtualmuseum.org</p>
-                <p><strong>{currentLanguage === 'cs' ? 'Výzkumné dotazy' : 'Research Inquiries'}:</strong> research@virtualmuseum.org</p>
-                <p><strong>{currentLanguage === 'cs' ? 'Technická podpora' : 'Technical Support'}:</strong> support@virtualmuseum.org</p>
-                <p><strong>{currentLanguage === 'cs' ? 'Adresa' : 'Address'}:</strong> Digital Humanities Institute, University Plaza</p>
+              <h3 className="text-2xl font-semibold text-white mb-6">{t('footer-contact')}</h3>
+              <div className="text-gray-400 space-y-3">
+                <p><strong className="text-white">Email:</strong> info@virtualmuseum.org</p>
+                <p><strong className="text-white">{currentLanguage === 'cs' ? 'Výzkumné dotazy' : 'Research Inquiries'}:</strong> research@virtualmuseum.org</p>
+                <p><strong className="text-white">{currentLanguage === 'cs' ? 'Technická podpora' : 'Technical Support'}:</strong> support@virtualmuseum.org</p>
+                <p><strong className="text-white">{currentLanguage === 'cs' ? 'Adresa' : 'Address'}:</strong> Digital Humanities Institute, University Plaza</p>
               </div>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-orange-400 mb-4">{t('footer-resources')}</h3>
-              <ul className="text-gray-300 space-y-2">
-                <li><button onClick={() => scrollToSection('timeline')} className="hover:text-orange-400 transition-colors">{t('nav-timeline')}</button></li>
-                <li><button onClick={() => scrollToSection('exhibitions')} className="hover:text-orange-400 transition-colors">{t('nav-exhibitions')}</button></li>
-                <li><button onClick={() => scrollToSection('documents')} className="hover:text-orange-400 transition-colors">{t('nav-documents')}</button></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">{currentLanguage === 'cs' ? 'Výzkumné pokyny' : 'Research Guidelines'}</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">{currentLanguage === 'cs' ? 'Vzdělávací materiály' : 'Educational Materials'}</a></li>
+              <h3 className="text-2xl font-semibold text-white mb-6">{t('footer-resources')}</h3>
+              <ul className="text-gray-400 space-y-3">
+                <li><button onClick={() => scrollToSection('timeline')} className="hover:text-white transition-colors duration-300">{t('nav-timeline')}</button></li>
+                <li><button onClick={() => scrollToSection('exhibitions')} className="hover:text-white transition-colors duration-300">{t('nav-exhibitions')}</button></li>
+                <li><button onClick={() => scrollToSection('documents')} className="hover:text-white transition-colors duration-300">{t('nav-documents')}</button></li>
+                <li><a href="#" className="hover:text-white transition-colors duration-300">{currentLanguage === 'cs' ? 'Výzkumné pokyny' : 'Research Guidelines'}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors duration-300">{currentLanguage === 'cs' ? 'Vzdělávací materiály' : 'Educational Materials'}</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-orange-400 mb-4">{t('footer-partners')}</h3>
-              <ul className="text-gray-300 space-y-2">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">{currentLanguage === 'cs' ? 'Národní archiv' : 'National Archives'}</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">{currentLanguage === 'cs' ? 'Státní historická společnost' : 'State Historical Society'}</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">{currentLanguage === 'cs' ? 'Mezinárodní výzkumná síť' : 'International Research Network'}</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">{currentLanguage === 'cs' ? 'Pamětní organizace' : 'Memorial Organizations'}</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">{currentLanguage === 'cs' ? 'Akademičtí partneři' : 'Academic Partners'}</a></li>
+              <h3 className="text-2xl font-semibold text-white mb-6">{t('footer-partners')}</h3>
+              <ul className="text-gray-400 space-y-3">
+                <li><a href="#" className="hover:text-white transition-colors duration-300">{currentLanguage === 'cs' ? 'Národní archiv' : 'National Archives'}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors duration-300">{currentLanguage === 'cs' ? 'Státní historická společnost' : 'State Historical Society'}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors duration-300">{currentLanguage === 'cs' ? 'Mezinárodní výzkumná síť' : 'International Research Network'}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors duration-300">{currentLanguage === 'cs' ? 'Pamětní organizace' : 'Memorial Organizations'}</a></li>
+                <li><a href="#" className="hover:text-white transition-colors duration-300">{currentLanguage === 'cs' ? 'Akademičtí partneři' : 'Academic Partners'}</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-700 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex flex-col md:flex-row items-center gap-4">
-                <p className="text-gray-400">{t('footer-copyright')}</p>
-                <div className="flex gap-4 text-sm">
-                  <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+          <div className="border-t border-gray-800 pt-12">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <p className="text-gray-500">{t('footer-copyright')}</p>
+                <div className="flex gap-6 text-sm">
+                  <a href="#" className="text-gray-500 hover:text-white transition-colors duration-300">
                     {currentLanguage === 'cs' ? 'Zásady ochrany osobních údajů' : 'Privacy Policy'}
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+                  <a href="#" className="text-gray-500 hover:text-white transition-colors duration-300">
                     {currentLanguage === 'cs' ? 'Podmínky použití' : 'Terms of Use'}
                   </a>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm text-center md:text-right">
+              <p className="text-gray-500 text-sm text-center md:text-right">
                 {t('footer-acknowledgment')}
               </p>
             </div>
