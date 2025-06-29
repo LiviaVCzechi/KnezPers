@@ -148,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Language switching
     langButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
             const lang = this.getAttribute('data-lang');
             switchLanguage(lang);
             
@@ -273,9 +274,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    documentSearch.addEventListener('input', filterDocuments);
-    documentType.addEventListener('change', filterDocuments);
-    documentPeriod.addEventListener('change', filterDocuments);
+    if (documentSearch) documentSearch.addEventListener('input', filterDocuments);
+    if (documentType) documentType.addEventListener('change', filterDocuments);
+    if (documentPeriod) documentPeriod.addEventListener('change', filterDocuments);
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -359,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (searchBtn) {
         searchBtn.addEventListener('click', function() {
-            documentSearch.focus();
+            if (documentSearch) documentSearch.focus();
         });
     }
     
@@ -487,15 +488,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function switchLanguage(lang) {
     currentLanguage = lang;
     
-    // Switch to appropriate HTML file
-    if (lang === 'en' && !window.location.pathname.includes('index-en.html')) {
-        window.location.href = 'index-en.html';
-        return;
-    } else if (lang === 'cs' && window.location.pathname.includes('index-en.html')) {
-        window.location.href = 'index.html';
-        return;
-    }
-    
     // Update document language attribute
     document.documentElement.lang = lang;
     
@@ -506,8 +498,93 @@ function switchLanguage(lang) {
     };
     document.title = titles[lang];
     
+    // Update all translatable elements
+    updatePageContent(lang);
+    
     // Update aria-labels and other accessibility attributes
     updateAccessibilityLabels(lang);
+    
+    // Store language preference
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Function to update page content based on language
+function updatePageContent(lang) {
+    const t = translations[lang];
+    
+    // Update navigation
+    updateElementText('.nav-link[href="#home"]', t['nav-home']);
+    updateElementText('.nav-link[href="#about"]', t['nav-about']);
+    updateElementText('.nav-link[href="#timeline"]', t['nav-timeline']);
+    updateElementText('.nav-link[href="#exhibitions"]', t['nav-exhibitions']);
+    updateElementText('.nav-link[href="#documents"]', t['nav-documents']);
+    updateElementText('.nav-link[href="#news"]', t['nav-news']);
+    updateElementText('.nav-link[href="#contact"]', t['nav-contact']);
+    
+    // Update hero section
+    updateElementText('.hero-title', t['hero-title']);
+    updateElementText('.hero-subtitle', t['hero-subtitle']);
+    updateElementText('.hero-actions .btn-primary', t['hero-btn-timeline']);
+    updateElementText('.hero-actions .btn-secondary', t['hero-btn-exhibitions']);
+    
+    // Update about section
+    updateElementText('#about .section-title', t['about-title']);
+    updateElementText('.about-content h3:first-of-type', t['about-mission']);
+    updateElementText('.about-content h3:nth-of-type(2)', t['about-significance']);
+    updateElementText('.about-content p:first-of-type', t['about-mission-text']);
+    updateElementText('.about-content p:nth-of-type(2)', t['about-significance-text']);
+    updateElementText('.stat-label:contains("Historických dokumentů"), .stat-label:contains("Historical Documents")', t['stat-documents']);
+    updateElementText('.stat-label:contains("Osobních příběhů"), .stat-label:contains("Personal Stories")', t['stat-stories']);
+    updateElementText('.stat-label:contains("Interaktivních exponátů"), .stat-label:contains("Interactive Exhibits")', t['stat-exhibits']);
+    
+    // Update timeline section
+    updateElementText('#timeline .section-title', t['timeline-title']);
+    updateElementText('#timeline .section-subtitle', t['timeline-subtitle']);
+    updateElementText('.timeline-filter[data-period="all"]', t['timeline-all']);
+    
+    // Update exhibitions section
+    updateElementText('#exhibitions .section-title', t['exhibitions-title']);
+    updateElementText('#exhibitions .section-subtitle', t['exhibitions-subtitle']);
+    updateElementText('.filter-btn[data-filter="all"]', t['exhibitions-all']);
+    updateElementText('.filter-btn[data-filter="personal"]', t['exhibitions-personal']);
+    updateElementText('.filter-btn[data-filter="institutional"]', t['exhibitions-institutional']);
+    updateElementText('.filter-btn[data-filter="resistance"]', t['exhibitions-resistance']);
+    
+    // Update documents section
+    updateElementText('#documents .section-title', t['documents-title']);
+    updateElementText('#documents .section-subtitle', t['documents-subtitle']);
+    updateElementAttribute('#documentSearch', 'placeholder', t['search-placeholder']);
+    
+    // Update news section
+    updateElementText('#news .section-title', t['news-title']);
+    updateElementText('#news .section-subtitle', t['news-subtitle']);
+    
+    // Update footer
+    updateElementText('.footer-section h3:contains("O nás"), .footer-section h3:contains("About Us")', t['footer-about']);
+    updateElementText('.footer-section h4:contains("Projektový tým"), .footer-section h4:contains("Project Team")', t['footer-team']);
+    updateElementText('.footer-section h3:contains("Kontaktní informace"), .footer-section h3:contains("Contact Information")', t['footer-contact']);
+    updateElementText('.footer-section h3:contains("Zdroje"), .footer-section h3:contains("Resources")', t['footer-resources']);
+    updateElementText('.footer-section h3:contains("Zdroje a partneři"), .footer-section h3:contains("Sources & Partners")', t['footer-partners']);
+    updateElementText('.footer-copyright', t['footer-copyright']);
+    updateElementText('.footer-acknowledgment p', t['footer-acknowledgment']);
+}
+
+// Helper function to update element text
+function updateElementText(selector, text) {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(element => {
+        if (element) {
+            element.textContent = text;
+        }
+    });
+}
+
+// Helper function to update element attributes
+function updateElementAttribute(selector, attribute, value) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.setAttribute(attribute, value);
+    }
 }
 
 // Update accessibility labels based on language
@@ -538,6 +615,23 @@ function updateAccessibilityLabels(lang) {
         printBtn.innerHTML = lang === 'cs' ? 'Tisknout stránku' : 'Print Page';
     }
 }
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'cs';
+    
+    // Set the correct active button
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === savedLanguage) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Apply the language
+    switchLanguage(savedLanguage);
+});
 
 // Additional CSS for animations and accessibility
 const additionalStyles = `
