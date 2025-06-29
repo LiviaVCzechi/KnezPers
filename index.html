@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Museum of Historical Repressions</title>
+    <title>Virtuální muzeum historických represí</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='3' y='3' width='18' height='18' rx='2'/><path d='M9 9h6v6H9z'/></svg>">
 </head>
@@ -16,18 +16,22 @@
                         <rect x="3" y="3" width="18" height="18" rx="2"/>
                         <path d="M9 9h6v6H9z"/>
                     </svg>
-                    <span class="nav-title">Virtual Museum</span>
+                    <span class="nav-title">Virtuální muzeum</span>
                 </div>
                 <div class="nav-menu" id="navMenu">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#timeline" class="nav-link">Timeline</a>
-                    <a href="#exhibitions" class="nav-link">Exhibitions</a>
-                    <a href="#documents" class="nav-link">Documents</a>
-                    <a href="#news" class="nav-link">News</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#home" class="nav-link active">Domů</a>
+                    <a href="#about" class="nav-link">O projektu</a>
+                    <a href="#timeline" class="nav-link">Časová osa</a>
+                    <a href="#exhibitions" class="nav-link">Výstavy</a>
+                    <a href="#documents" class="nav-link">Dokumenty</a>
+                    <a href="#news" class="nav-link">Aktuality</a>
+                    <a href="#contact" class="nav-link">Kontakt</a>
                 </div>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="cs">CS</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Přepnout navigaci">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -40,47 +44,47 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Preserving History, Honoring Memory</h1>
-                <p class="hero-subtitle">Exploring the multifaceted history of repressions through accessible digital exhibitions, interactive timelines, and comprehensive archives.</p>
+                <h1 class="hero-title">Zachování historie, uctění paměti</h1>
+                <p class="hero-subtitle">Zkoumání mnohostranné historie represí prostřednictvím přístupných digitálních výstav, interaktivních časových os a komplexních archivů.</p>
                 <div class="hero-actions">
-                    <a href="#timeline" class="btn btn-primary">Explore Timeline</a>
-                    <a href="#exhibitions" class="btn btn-secondary">View Exhibitions</a>
+                    <a href="#timeline" class="btn btn-primary">Prozkoumat časovou osu</a>
+                    <a href="#exhibitions" class="btn btn-secondary">Zobrazit výstavy</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Historical archives and documents" loading="lazy">
+                <img src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Historické archivy a dokumenty" loading="lazy">
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="section">
             <div class="container">
-                <h2 class="section-title">About the Project</h2>
+                <h2 class="section-title">O projektu</h2>
                 <div class="about-grid">
                     <div class="about-content">
-                        <h3>Mission & Vision</h3>
-                        <p>Our virtual museum aims to create an engaging online platform showcasing historical repressions, providing accessible digital exhibitions and educational resources. We strive to preserve historical memory and promote understanding through comprehensive research and interactive presentations.</p>
+                        <h3>Mise a vize</h3>
+                        <p>Naše virtuální muzeum si klade za cíl vytvořit poutavou online platformu prezentující historické represe, poskytující přístupné digitální výstavy a vzdělávací zdroje. Usilujeme o zachování historické paměti a podporu porozumění prostřednictvím komplexního výzkumu a interaktivních prezentací.</p>
                         
-                        <h3>Project Significance</h3>
-                        <p>This digital archive serves as a vital resource for researchers, educators, and the general public interested in understanding the complex history of political and social repressions. Our platform offers unprecedented access to documents, testimonies, and scholarly analysis.</p>
+                        <h3>Význam projektu</h3>
+                        <p>Tento digitální archiv slouží jako zásadní zdroj pro výzkumníky, pedagogy a širokou veřejnost zajímající se o pochopení složité historie politických a sociálních represí. Naše platforma nabízí bezprecedentní přístup k dokumentům, svědectvím a vědeckým analýzám.</p>
                         
                         <div class="about-stats">
                             <div class="stat">
                                 <span class="stat-number">500+</span>
-                                <span class="stat-label">Historical Documents</span>
+                                <span class="stat-label">Historických dokumentů</span>
                             </div>
                             <div class="stat">
                                 <span class="stat-number">100+</span>
-                                <span class="stat-label">Personal Stories</span>
+                                <span class="stat-label">Osobních příběhů</span>
                             </div>
                             <div class="stat">
                                 <span class="stat-number">50+</span>
-                                <span class="stat-label">Interactive Exhibits</span>
+                                <span class="stat-label">Interaktivních exponátů</span>
                             </div>
                         </div>
                     </div>
                     <div class="about-image">
-                        <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Historical research and documentation" loading="lazy">
+                        <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Historický výzkum a dokumentace" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -89,11 +93,11 @@
         <!-- Timeline Section -->
         <section id="timeline" class="section timeline-section">
             <div class="container">
-                <h2 class="section-title">Interactive Timeline</h2>
-                <p class="section-subtitle">Navigate through key historical events and personalities</p>
+                <h2 class="section-title">Interaktivní časová osa</h2>
+                <p class="section-subtitle">Procházejte klíčovými historickými událostmi a osobnostmi</p>
                 
                 <div class="timeline-controls">
-                    <button class="timeline-filter active" data-period="all">All Periods</button>
+                    <button class="timeline-filter active" data-period="all">Všechna období</button>
                     <button class="timeline-filter" data-period="early">1900-1930</button>
                     <button class="timeline-filter" data-period="mid">1930-1960</button>
                     <button class="timeline-filter" data-period="late">1960-1990</button>
@@ -104,10 +108,10 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-year">1917</div>
-                            <h3>Revolutionary Changes</h3>
-                            <p>Major political upheavals leading to significant social and institutional transformations.</p>
+                            <h3>Revoluční změny</h3>
+                            <p>Významné politické otřesy vedoucí k zásadním společenským a institucionálním transformacím.</p>
                             <div class="timeline-image">
-                                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Historical documentation from 1917" loading="lazy">
+                                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Historická dokumentace z roku 1917" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -116,12 +120,12 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-year">1925</div>
-                            <h3>Institutional Reforms</h3>
-                            <p>Establishment of new administrative structures and legal frameworks affecting civil liberties.</p>
+                            <h3>Institucionální reformy</h3>
+                            <p>Ustanovení nových administrativních struktur a právních rámců ovlivňujících občanské svobody.</p>
                             <div class="timeline-personalities">
                                 <div class="personality">
-                                    <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Historical figure" loading="lazy">
-                                    <span>Notable Figure A</span>
+                                    <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Historická osobnost" loading="lazy">
+                                    <span>Významná osobnost A</span>
                                 </div>
                             </div>
                         </div>
@@ -131,10 +135,10 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-year">1937</div>
-                            <h3>Period of Intensification</h3>
-                            <p>Significant escalation in political repressions affecting various social groups and institutions.</p>
+                            <h3>Období zostření</h3>
+                            <p>Významná eskalace politických represí postihující různé společenské skupiny a instituce.</p>
                             <div class="timeline-documents">
-                                <a href="#documents" class="timeline-doc">View Related Documents</a>
+                                <a href="#documents" class="timeline-doc">Zobrazit související dokumenty</a>
                             </div>
                         </div>
                     </div>
@@ -143,8 +147,8 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-year">1953</div>
-                            <h3>Transitional Period</h3>
-                            <p>Changes in leadership and policy direction leading to gradual shifts in repressive practices.</p>
+                            <h3>Přechodné období</h3>
+                            <p>Změny ve vedení a směřování politiky vedoucí k postupným posunům v represivních praktikách.</p>
                         </div>
                     </div>
                     
@@ -152,8 +156,8 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-year">1968</div>
-                            <h3>Social Movements</h3>
-                            <p>Emergence of civil rights movements and increased resistance to authoritarian practices.</p>
+                            <h3>Společenská hnutí</h3>
+                            <p>Vznik občanskoprávních hnutí a zvýšený odpor vůči autoritářským praktikám.</p>
                         </div>
                     </div>
                     
@@ -161,8 +165,8 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-year">1989</div>
-                            <h3>Democratic Transitions</h3>
-                            <p>Fall of authoritarian regimes and beginning of democratic reforms and truth commissions.</p>
+                            <h3>Demokratické přechody</h3>
+                            <p>Pád autoritářských režimů a začátek demokratických reforem a komisí pravdy.</p>
                         </div>
                     </div>
                 </div>
@@ -172,104 +176,104 @@
         <!-- Exhibitions Section -->
         <section id="exhibitions" class="section">
             <div class="container">
-                <h2 class="section-title">Virtual Exhibitions</h2>
-                <p class="section-subtitle">Curated collections showcasing various aspects of historical repressions</p>
+                <h2 class="section-title">Virtuální výstavy</h2>
+                <p class="section-subtitle">Kurátorské sbírky prezentující různé aspekty historických represí</p>
                 
                 <div class="exhibition-filters">
-                    <button class="filter-btn active" data-filter="all">All Exhibitions</button>
-                    <button class="filter-btn" data-filter="personal">Personal Stories</button>
-                    <button class="filter-btn" data-filter="institutional">Institutional</button>
-                    <button class="filter-btn" data-filter="resistance">Resistance</button>
+                    <button class="filter-btn active" data-filter="all">Všechny výstavy</button>
+                    <button class="filter-btn" data-filter="personal">Osobní příběhy</button>
+                    <button class="filter-btn" data-filter="institutional">Institucionální</button>
+                    <button class="filter-btn" data-filter="resistance">Odpor</button>
                 </div>
                 
                 <div class="exhibitions-grid" id="exhibitionsGrid">
                     <div class="exhibition-card" data-category="personal">
                         <div class="exhibition-image">
-                            <img src="https://images.pexels.com/photos/8386399/pexels-photo-8386399.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Voices of the Silenced exhibition" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8386399/pexels-photo-8386399.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Hlasy umlčených" loading="lazy">
                         </div>
                         <div class="exhibition-content">
-                            <h3>Voices of the Silenced</h3>
-                            <p>Personal testimonies and stories from individuals who experienced political repressions firsthand.</p>
+                            <h3>Hlasy umlčených</h3>
+                            <p>Osobní svědectví a příběhy jednotlivců, kteří zažili politické represe na vlastní kůži.</p>
                             <div class="exhibition-meta">
-                                <span class="exhibition-items">45 Items</span>
-                                <span class="exhibition-date">Updated Dec 2024</span>
+                                <span class="exhibition-items">45 položek</span>
+                                <span class="exhibition-date">Aktualizováno prosinec 2024</span>
                             </div>
-                            <button class="btn btn-outline">Explore Exhibition</button>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
                         </div>
                     </div>
                     
                     <div class="exhibition-card" data-category="institutional">
                         <div class="exhibition-image">
-                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Apparatus of Control exhibition" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Aparát kontroly" loading="lazy">
                         </div>
                         <div class="exhibition-content">
-                            <h3>Apparatus of Control</h3>
-                            <p>Examining the institutional mechanisms and bureaucratic structures that enabled systematic repressions.</p>
+                            <h3>Aparát kontroly</h3>
+                            <p>Zkoumání institucionálních mechanismů a byrokratických struktur, které umožnily systematické represe.</p>
                             <div class="exhibition-meta">
-                                <span class="exhibition-items">32 Items</span>
-                                <span class="exhibition-date">Updated Nov 2024</span>
+                                <span class="exhibition-items">32 položek</span>
+                                <span class="exhibition-date">Aktualizováno listopad 2024</span>
                             </div>
-                            <button class="btn btn-outline">Explore Exhibition</button>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
                         </div>
                     </div>
                     
                     <div class="exhibition-card" data-category="resistance">
                         <div class="exhibition-image">
-                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Acts of Courage exhibition" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Činy odvahy" loading="lazy">
                         </div>
                         <div class="exhibition-content">
-                            <h3>Acts of Courage</h3>
-                            <p>Stories of resistance, solidarity, and human dignity in the face of oppression and persecution.</p>
+                            <h3>Činy odvahy</h3>
+                            <p>Příběhy odporu, solidarity a lidské důstojnosti tváří v tvář útlaku a pronásledování.</p>
                             <div class="exhibition-meta">
-                                <span class="exhibition-items">28 Items</span>
-                                <span class="exhibition-date">Updated Oct 2024</span>
+                                <span class="exhibition-items">28 položek</span>
+                                <span class="exhibition-date">Aktualizováno říjen 2024</span>
                             </div>
-                            <button class="btn btn-outline">Explore Exhibition</button>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
                         </div>
                     </div>
                     
                     <div class="exhibition-card" data-category="institutional">
                         <div class="exhibition-image">
-                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Legal Frameworks exhibition" loading="lazy">
+                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Právní rámce" loading="lazy">
                         </div>
                         <div class="exhibition-content">
-                            <h3>Legal Frameworks</h3>
-                            <p>Analysis of laws, regulations, and judicial processes that legitimized repressive measures.</p>
+                            <h3>Právní rámce</h3>
+                            <p>Analýza zákonů, nařízení a soudních procesů, které legitimizovaly represivní opatření.</p>
                             <div class="exhibition-meta">
-                                <span class="exhibition-items">38 Items</span>
-                                <span class="exhibition-date">Updated Sep 2024</span>
+                                <span class="exhibition-items">38 položek</span>
+                                <span class="exhibition-date">Aktualizováno září 2024</span>
                             </div>
-                            <button class="btn btn-outline">Explore Exhibition</button>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
                         </div>
                     </div>
                     
                     <div class="exhibition-card" data-category="personal">
                         <div class="exhibition-image">
-                            <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Letters from Prison exhibition" loading="lazy">
+                            <img src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Dopisy z vězení" loading="lazy">
                         </div>
                         <div class="exhibition-content">
-                            <h3>Letters from Prison</h3>
-                            <p>Correspondence and personal writings that provide intimate glimpses into the human cost of repression.</p>
+                            <h3>Dopisy z vězení</h3>
+                            <p>Korespondence a osobní spisy poskytující intimní pohledy na lidské náklady represí.</p>
                             <div class="exhibition-meta">
-                                <span class="exhibition-items">52 Items</span>
-                                <span class="exhibition-date">Updated Aug 2024</span>
+                                <span class="exhibition-items">52 položek</span>
+                                <span class="exhibition-date">Aktualizováno srpen 2024</span>
                             </div>
-                            <button class="btn btn-outline">Explore Exhibition</button>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
                         </div>
                     </div>
                     
                     <div class="exhibition-card" data-category="resistance">
                         <div class="exhibition-image">
-                            <img src="https://images.pexels.com/photos/8386427/pexels-photo-8386427.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Underground Networks exhibition" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8386427/pexels-photo-8386427.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Výstava Podzemní sítě" loading="lazy">
                         </div>
                         <div class="exhibition-content">
-                            <h3>Underground Networks</h3>
-                            <p>The hidden networks of support, communication, and resistance that sustained hope during dark times.</p>
+                            <h3>Podzemní sítě</h3>
+                            <p>Skryté sítě podpory, komunikace a odporu, které udržovaly naději v temných časech.</p>
                             <div class="exhibition-meta">
-                                <span class="exhibition-items">41 Items</span>
-                                <span class="exhibition-date">Updated Jul 2024</span>
+                                <span class="exhibition-items">41 položek</span>
+                                <span class="exhibition-date">Aktualizováno červenec 2024</span>
                             </div>
-                            <button class="btn btn-outline">Explore Exhibition</button>
+                            <button class="btn btn-outline">Prozkoumat výstavu</button>
                         </div>
                     </div>
                 </div>
@@ -279,13 +283,13 @@
         <!-- Documents Section -->
         <section id="documents" class="section">
             <div class="container">
-                <h2 class="section-title">Document Archive</h2>
-                <p class="section-subtitle">Access to historical documents, archives, and publications</p>
+                <h2 class="section-title">Archiv dokumentů</h2>
+                <p class="section-subtitle">Přístup k historickým dokumentům, archivům a publikacím</p>
                 
                 <div class="documents-search">
                     <div class="search-bar">
-                        <input type="text" id="documentSearch" placeholder="Search documents..." class="search-input">
-                        <button class="search-btn" aria-label="Search documents">
+                        <input type="text" id="documentSearch" placeholder="Hledat dokumenty..." class="search-input">
+                        <button class="search-btn" aria-label="Hledat dokumenty">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="11" cy="11" r="8"></circle>
                                 <path d="m21 21-4.35-4.35"></path>
@@ -294,14 +298,14 @@
                     </div>
                     <div class="document-filters">
                         <select id="documentType" class="filter-select">
-                            <option value="all">All Types</option>
-                            <option value="official">Official Documents</option>
-                            <option value="personal">Personal Papers</option>
-                            <option value="photographs">Photographs</option>
+                            <option value="all">Všechny typy</option>
+                            <option value="official">Úředné dokumenty</option>
+                            <option value="personal">Osobní spisy</option>
+                            <option value="photographs">Fotografie</option>
                             <option value="recordings">Audio/Video</option>
                         </select>
                         <select id="documentPeriod" class="filter-select">
-                            <option value="all">All Periods</option>
+                            <option value="all">Všechna období</option>
                             <option value="1900-1930">1900-1930</option>
                             <option value="1930-1960">1930-1960</option>
                             <option value="1960-1990">1960-1990</option>
@@ -312,72 +316,72 @@
                 <div class="documents-grid" id="documentsGrid">
                     <div class="document-card" data-type="official" data-period="1930-1960">
                         <div class="document-thumbnail">
-                            <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Official decree document" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Úřední dekret" loading="lazy">
                         </div>
                         <div class="document-info">
-                            <h3>Administrative Decree No. 247</h3>
-                            <p class="document-description">Official government decree outlining new administrative procedures and restrictions.</p>
+                            <h3>Administrativní dekret č. 247</h3>
+                            <p class="document-description">Úřední vládní dekret popisující nové administrativní postupy a omezení.</p>
                             <div class="document-meta">
-                                <span class="document-date">March 15, 1937</span>
-                                <span class="document-type">Official Document</span>
+                                <span class="document-date">15. března 1937</span>
+                                <span class="document-type">Úřední dokument</span>
                             </div>
                             <div class="document-actions">
-                                <button class="btn btn-sm btn-primary">View Document</button>
-                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                                <button class="btn btn-sm btn-primary">Zobrazit dokument</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
                             </div>
                         </div>
                     </div>
                     
                     <div class="document-card" data-type="personal" data-period="1930-1960">
                         <div class="document-thumbnail">
-                            <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Personal diary pages" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Osobní deník" loading="lazy">
                         </div>
                         <div class="document-info">
-                            <h3>Personal Diary of Maria K.</h3>
-                            <p class="document-description">Private diary entries documenting daily life during periods of political uncertainty.</p>
+                            <h3>Osobní deník Marie K.</h3>
+                            <p class="document-description">Soukromé deníkové záznamy dokumentující každodenní život během období politické nejistoty.</p>
                             <div class="document-meta">
                                 <span class="document-date">1938-1942</span>
-                                <span class="document-type">Personal Papers</span>
+                                <span class="document-type">Osobní spisy</span>
                             </div>
                             <div class="document-actions">
-                                <button class="btn btn-sm btn-primary">View Document</button>
-                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                                <button class="btn btn-sm btn-primary">Zobrazit dokument</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
                             </div>
                         </div>
                     </div>
                     
                     <div class="document-card" data-type="photographs" data-period="1960-1990">
                         <div class="document-thumbnail">
-                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Historical photograph collection" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8849293/pexels-photo-8849293.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Historická fotografická sbírka" loading="lazy">
                         </div>
                         <div class="document-info">
-                            <h3>Protest Documentation</h3>
-                            <p class="document-description">Collection of photographs documenting public demonstrations and civil rights movements.</p>
+                            <h3>Dokumentace protestů</h3>
+                            <p class="document-description">Sbírka fotografií dokumentujících veřejné demonstrace a občanskoprávní hnutí.</p>
                             <div class="document-meta">
                                 <span class="document-date">1968-1975</span>
-                                <span class="document-type">Photographs</span>
+                                <span class="document-type">Fotografie</span>
                             </div>
                             <div class="document-actions">
-                                <button class="btn btn-sm btn-primary">View Gallery</button>
-                                <button class="btn btn-sm btn-outline">Download Archive</button>
+                                <button class="btn btn-sm btn-primary">Zobrazit galerii</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout archiv</button>
                             </div>
                         </div>
                     </div>
                     
                     <div class="document-card" data-type="official" data-period="1900-1930">
                         <div class="document-thumbnail">
-                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Legal document archive" loading="lazy">
+                            <img src="https://images.pexels.com/photos/6664851/pexels-photo-6664851.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Právní dokumentový archiv" loading="lazy">
                         </div>
                         <div class="document-info">
-                            <h3>Legal Code Amendments</h3>
-                            <p class="document-description">Series of legal amendments that expanded state powers and restricted individual rights.</p>
+                            <h3>Novely právního kodexu</h3>
+                            <p class="document-description">Série právních novel, které rozšířily státní pravomoci a omezily individuální práva.</p>
                             <div class="document-meta">
                                 <span class="document-date">1923-1925</span>
-                                <span class="document-type">Official Document</span>
+                                <span class="document-type">Úřední dokument</span>
                             </div>
                             <div class="document-actions">
-                                <button class="btn btn-sm btn-primary">View Document</button>
-                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                                <button class="btn btn-sm btn-primary">Zobrazit dokument</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
                             </div>
                         </div>
                     </div>
@@ -393,33 +397,33 @@
                             </div>
                         </div>
                         <div class="document-info">
-                            <h3>Oral History Interview: Viktor S.</h3>
-                            <p class="document-description">Audio interview with survivor discussing experiences and impact of political repressions.</p>
+                            <h3>Rozhovor orální historie: Viktor S.</h3>
+                            <p class="document-description">Zvukový rozhovor s přeživším diskutující zkušenosti a dopad politických represí.</p>
                             <div class="document-meta">
-                                <span class="document-date">Recorded 1987</span>
-                                <span class="document-type">Audio Recording</span>
+                                <span class="document-date">Nahráno 1987</span>
+                                <span class="document-type">Zvukový záznam</span>
                             </div>
                             <div class="document-actions">
-                                <button class="btn btn-sm btn-primary">Play Audio</button>
-                                <button class="btn btn-sm btn-outline">Transcript</button>
+                                <button class="btn btn-sm btn-primary">Přehrát audio</button>
+                                <button class="btn btn-sm btn-outline">Přepis</button>
                             </div>
                         </div>
                     </div>
                     
                     <div class="document-card" data-type="personal" data-period="1960-1990">
                         <div class="document-thumbnail">
-                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Personal correspondence" loading="lazy">
+                            <img src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Osobní korespondence" loading="lazy">
                         </div>
                         <div class="document-info">
-                            <h3>Correspondence Collection</h3>
-                            <p class="document-description">Letters between family members separated by political circumstances and imprisonment.</p>
+                            <h3>Sbírka korespondence</h3>
+                            <p class="document-description">Dopisy mezi členy rodiny oddělenými politickými okolnostmi a uvězněním.</p>
                             <div class="document-meta">
                                 <span class="document-date">1970-1985</span>
-                                <span class="document-type">Personal Papers</span>
+                                <span class="document-type">Osobní spisy</span>
                             </div>
                             <div class="document-actions">
-                                <button class="btn btn-sm btn-primary">View Letters</button>
-                                <button class="btn btn-sm btn-outline">Download PDF</button>
+                                <button class="btn btn-sm btn-primary">Zobrazit dopisy</button>
+                                <button class="btn btn-sm btn-outline">Stáhnout PDF</button>
                             </div>
                         </div>
                     </div>
@@ -430,82 +434,82 @@
         <!-- News Section -->
         <section id="news" class="section">
             <div class="container">
-                <h2 class="section-title">Latest Updates</h2>
-                <p class="section-subtitle">Recent additions, research findings, and project announcements</p>
+                <h2 class="section-title">Nejnovější aktuality</h2>
+                <p class="section-subtitle">Nedávné přírůstky, výzkumné poznatky a oznámení o projektu</p>
                 
                 <div class="news-grid">
                     <article class="news-card featured">
                         <div class="news-image">
-                            <img src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=600" alt="New archive discovery" loading="lazy">
+                            <img src="https://images.pexels.com/photos/159775/library-books-education-literature-159775.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nový archivní objev" loading="lazy">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
-                                <span class="news-date">December 15, 2024</span>
-                                <span class="news-category">Discovery</span>
+                                <span class="news-date">15. prosince 2024</span>
+                                <span class="news-category">Objev</span>
                             </div>
-                            <h3>Major Archive Discovery Expands Collection</h3>
-                            <p>Recently uncovered documents from state archives provide new insights into administrative processes during the 1930s period of repressions.</p>
-                            <a href="#" class="news-link">Read Full Article</a>
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">December 10, 2024</span>
-                                <span class="news-category">Exhibition</span>
-                            </div>
-                            <h3>New Virtual Exhibition: "Voices of Resistance"</h3>
-                            <p>Our latest exhibition focuses on acts of courage and solidarity during periods of intense political repression.</p>
-                            <a href="#exhibitions" class="news-link">View Exhibition</a>
+                            <h3>Významný archivní objev rozšiřuje sbírku</h3>
+                            <p>Nedávno objevené dokumenty ze státních archivů poskytují nové poznatky o administrativních procesech během období represí ve 30. letech.</p>
+                            <a href="#" class="news-link">Číst celý článek</a>
                         </div>
                     </article>
                     
                     <article class="news-card">
                         <div class="news-content">
                             <div class="news-meta">
-                                <span class="news-date">December 5, 2024</span>
-                                <span class="news-category">Research</span>
+                                <span class="news-date">10. prosince 2024</span>
+                                <span class="news-category">Výstava</span>
                             </div>
-                            <h3>Collaborative Research Project Launched</h3>
-                            <p>Partnership with international institutions to digitize and analyze cross-border patterns of political persecution.</p>
-                            <a href="#" class="news-link">Learn More</a>
+                            <h3>Nová virtuální výstava: "Hlasy odporu"</h3>
+                            <p>Naše nejnovější výstava se zaměřuje na činy odvahy a solidarity během období intenzivních politických represí.</p>
+                            <a href="#exhibitions" class="news-link">Zobrazit výstavu</a>
                         </div>
                     </article>
                     
                     <article class="news-card">
                         <div class="news-content">
                             <div class="news-meta">
-                                <span class="news-date">November 28, 2024</span>
-                                <span class="news-category">Technology</span>
+                                <span class="news-date">5. prosince 2024</span>
+                                <span class="news-category">Výzkum</span>
                             </div>
-                            <h3>Enhanced Search Capabilities</h3>
-                            <p>New advanced search features allow for more precise exploration of our document archives and exhibitions.</p>
-                            <a href="#documents" class="news-link">Try Search</a>
+                            <h3>Spuštěn kolaborativní výzkumný projekt</h3>
+                            <p>Partnerství s mezinárodními institucemi pro digitalizaci a analýzu přeshraničních vzorců politického pronásledování.</p>
+                            <a href="#" class="news-link">Dozvědět se více</a>
                         </div>
                     </article>
                     
                     <article class="news-card">
                         <div class="news-content">
                             <div class="news-meta">
-                                <span class="news-date">November 20, 2024</span>
-                                <span class="news-category">Education</span>
+                                <span class="news-date">28. listopadu 2024</span>
+                                <span class="news-category">Technologie</span>
                             </div>
-                            <h3>Educational Resource Package</h3>
-                            <p>Comprehensive teaching materials and curriculum guides now available for educators and researchers.</p>
-                            <a href="#" class="news-link">Download Resources</a>
+                            <h3>Vylepšené možnosti vyhledávání</h3>
+                            <p>Nové pokročilé funkce vyhledávání umožňují přesnější průzkum našich archivů dokumentů a výstav.</p>
+                            <a href="#documents" class="news-link">Vyzkoušet vyhledávání</a>
                         </div>
                     </article>
                     
                     <article class="news-card">
                         <div class="news-content">
                             <div class="news-meta">
-                                <span class="news-date">November 15, 2024</span>
-                                <span class="news-category">Conference</span>
+                                <span class="news-date">20. listopadu 2024</span>
+                                <span class="news-category">Vzdělávání</span>
                             </div>
-                            <h3>International Symposium Proceedings</h3>
-                            <p>Full proceedings from our recent symposium on "Memory, Justice, and Historical Truth" are now available.</p>
-                            <a href="#" class="news-link">Access Proceedings</a>
+                            <h3>Balíček vzdělávacích zdrojů</h3>
+                            <p>Komplexní výukové materiály a kurikulární příručky nyní dostupné pro pedagogy a výzkumníky.</p>
+                            <a href="#" class="news-link">Stáhnout zdroje</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date">15. listopadu 2024</span>
+                                <span class="news-category">Konference</span>
+                            </div>
+                            <h3>Sborník mezinárodního sympozia</h3>
+                            <p>Kompletní sborník z našeho nedávného sympozia "Paměť, spravedlnost a historická pravda" je nyní k dispozici.</p>
+                            <a href="#" class="news-link">Přístup ke sborníku</a>
                         </div>
                     </article>
                 </div>
@@ -517,65 +521,65 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About Us</h3>
-                    <p>A dedicated team of historians, researchers, and digital archivists committed to preserving historical memory and promoting understanding of past repressions.</p>
+                    <h3>O nás</h3>
+                    <p>Specializovaný tým historiků, výzkumníků a digitálních archivářů věnující se zachování historické paměti a podpoře porozumění minulým represím.</p>
                     <div class="team-info">
-                        <h4>Project Team</h4>
+                        <h4>Projektový tým</h4>
                         <ul>
-                            <li>Dr. Sarah Chen - Project Director</li>
-                            <li>Prof. Michael Rodriguez - Lead Historian</li>
-                            <li>Elena Volkov - Digital Archivist</li>
-                            <li>James Thompson - Technical Lead</li>
+                            <li>Dr. Sarah Chen - Ředitelka projektu</li>
+                            <li>Prof. Michael Rodriguez - Vedoucí historik</li>
+                            <li>Elena Volkov - Digitální archivářka</li>
+                            <li>James Thompson - Technický vedoucí</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Contact Information</h3>
+                    <h3>Kontaktní informace</h3>
                     <div class="contact-info">
                         <p><strong>Email:</strong> info@virtualmuseum.org</p>
-                        <p><strong>Research Inquiries:</strong> research@virtualmuseum.org</p>
-                        <p><strong>Technical Support:</strong> support@virtualmuseum.org</p>
-                        <p><strong>Address:</strong> Digital Humanities Institute, University Plaza, Academic City</p>
+                        <p><strong>Výzkumné dotazy:</strong> research@virtualmuseum.org</p>
+                        <p><strong>Technická podpora:</strong> support@virtualmuseum.org</p>
+                        <p><strong>Adresa:</strong> Institut digitálních humanitních věd, Univerzitní náměstí, Akademické město</p>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Resources</h3>
+                    <h3>Zdroje</h3>
                     <ul class="footer-links">
-                        <li><a href="#timeline">Interactive Timeline</a></li>
-                        <li><a href="#exhibitions">Virtual Exhibitions</a></li>
-                        <li><a href="#documents">Document Archive</a></li>
-                        <li><a href="#">Research Guidelines</a></li>
-                        <li><a href="#">Educational Materials</a></li>
-                        <li><a href="#">Citation Guide</a></li>
+                        <li><a href="#timeline">Interaktivní časová osa</a></li>
+                        <li><a href="#exhibitions">Virtuální výstavy</a></li>
+                        <li><a href="#documents">Archiv dokumentů</a></li>
+                        <li><a href="#">Výzkumné pokyny</a></li>
+                        <li><a href="#">Vzdělávací materiály</a></li>
+                        <li><a href="#">Průvodce citováním</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Sources & Partners</h3>
+                    <h3>Zdroje a partneři</h3>
                     <ul class="footer-links">
-                        <li><a href="#">National Archives</a></li>
-                        <li><a href="#">State Historical Society</a></li>
-                        <li><a href="#">International Research Network</a></li>
-                        <li><a href="#">Memorial Organizations</a></li>
-                        <li><a href="#">Academic Partners</a></li>
-                        <li><a href="#">Bibliography</a></li>
+                        <li><a href="#">Národní archiv</a></li>
+                        <li><a href="#">Státní historická společnost</a></li>
+                        <li><a href="#">Mezinárodní výzkumná síť</a></li>
+                        <li><a href="#">Pamětní organizace</a></li>
+                        <li><a href="#">Akademičtí partneři</a></li>
+                        <li><a href="#">Bibliografie</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <div class="footer-legal">
-                    <p>&copy; 2024 Virtual Museum of Historical Repressions. All rights reserved.</p>
+                    <p>&copy; 2024 Virtuální muzeum historických represí. Všechna práva vyhrazena.</p>
                     <div class="legal-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
-                        <a href="#">Copyright Notice</a>
+                        <a href="#">Zásady ochrany osobních údajů</a>
+                        <a href="#">Podmínky použití</a>
+                        <a href="#">Autorská práva</a>
                     </div>
                 </div>
                 <div class="footer-acknowledgment">
-                    <p>This project is supported by grants from the National Endowment for the Humanities and the Digital History Foundation.</p>
+                    <p>Tento projekt je podporován granty od Národního fondu pro humanitní vědy a Nadace digitální historie.</p>
                 </div>
             </div>
         </div>
