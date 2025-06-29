@@ -34,6 +34,7 @@ h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
 
 p {
     margin-bottom: 1rem;
@@ -912,6 +913,12 @@ p {
     font-weight: 600;
 }
 
+.footer-section h5 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
 .footer-section p {
     color: #b3b3b3;
     line-height: 1.6;
@@ -941,8 +948,79 @@ p {
     margin-bottom: 0.5rem;
 }
 
-.contact-info p {
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item h5 {
     margin-bottom: 0.75rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.contact-item p {
+    margin-bottom: 0.5rem;
+    color: #b3b3b3;
+}
+
+/* Author Bio Styles */
+.author-bio {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.author-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.author-avatar {
+    flex-shrink: 0;
+}
+
+.author-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    filter: grayscale(20%);
+}
+
+.author-title h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.author-role {
+    color: #cccccc;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.author-details {
+    line-height: 1.6;
+}
+
+.author-details p {
+    margin-bottom: 1rem;
+    color: #b3b3b3;
+}
+
+.author-details strong {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .footer-bottom {
@@ -1044,6 +1122,11 @@ p {
     }
     
     .footer-acknowledgment {
+        text-align: center;
+    }
+    
+    .author-header {
+        flex-direction: column;
         text-align: center;
     }
 }
@@ -1158,6 +1241,19 @@ p {
     .footer-content {
         grid-template-columns: 1fr;
     }
+    
+    .author-bio {
+        padding: 1.5rem;
+    }
+    
+    .author-header {
+        gap: 1rem;
+    }
+    
+    .author-avatar img {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1186,6 +1282,10 @@ p {
     .document-info,
     .news-content {
         padding: 1.5rem;
+    }
+    
+    .author-bio {
+        padding: 1rem;
     }
 }
 
